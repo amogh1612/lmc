@@ -1,0 +1,4 @@
+groq
+scikit-learn
+python-dotenv
+streamlit
