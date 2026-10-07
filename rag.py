@@ -27,8 +27,7 @@ Rules:
 """
 
 CLARIFY_MESSAGE = (
-    "Could you be more specific? Please include the person's name or the topic you're asking about. "
-    "For example: \"What did Julian Bond do?\" or \"Which Tuskegee Airmen are buried here?\""
+    "Could you be more specific? Please include the person's name or the topic you're asking about."
 )
 
 # Words that refer to someone without naming them.
