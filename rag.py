@@ -4,7 +4,7 @@ import json
 import os
 import re
 
-from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.feature_extraction.text import ENGLISH_STOP_WORDS, TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 
 BASE_DIR = os.path.dirname(__file__)
@@ -21,8 +21,30 @@ Rules:
 - Only use facts stated in the CONTEXT. Do not use outside knowledge.
 - If the CONTEXT does not contain the answer, respond exactly with: \
 "I'm sorry, I don't have that information in Southview Cemetery's records."
+- If the question is too vague to tell which person or topic it is about (for example \
+"What did he do?"), do not guess. Ask the user to name the person or topic.
 - Keep answers short and factual.
 """
+
+CLARIFY_MESSAGE = (
+    "Could you be more specific? Please include the person's name or the topic you're asking about. "
+    "For example: \"What did Julian Bond do?\" or \"Which Tuskegee Airmen are buried here?\""
+)
+
+# Words that refer to someone without naming them.
+PRONOUNS = {"he", "she", "him", "her", "his", "hers", "they", "them", "their", "theirs", "himself", "herself"}
+
+# Words that carry no subject on their own.
+FILLER = {"did", "does", "do", "done", "tell", "know", "info", "information", "anything", "something", "stuff",
+          "thing", "things", "explain", "describe", "talk", "say", "said", "like", "please", "happened", "happen",
+          "life", "person", "people", "someone", "somebody", "guy", "man", "woman", "story", "fact", "facts",
+          "details", "detail", "known", "famous", "important", "why", "who", "whom", "what", "was", "is", "are",
+          "were", "can", "could", "would", "about", "more", "else", "again", "ok", "okay", "hi", "hello", "hey"}
+
+# Surnames that are also everyday words; they only count as a name when typed with a capital letter.
+COMMON_WORD_NAMES = {"young", "white", "price", "hill", "bell", "king", "lee", "mae", "green", "brown", "grant",
+                     "rush", "guest", "swift", "penn", "oliver", "fuller", "hart", "long", "reeves", "parker",
+                     "turner", "carter", "cox", "nash", "miller", "shaw", "simon", "pace", "henry", "watts"}
 
 
 def load_chunks(path: str = KB_PATH) -> list[str]:
@@ -96,9 +118,29 @@ def load_json_chunks(path: str = JSON_KB_PATH) -> list[str]:
     return [c.strip() for c in chunks if c.strip()]
 
 
+def _words(text: str) -> list[str]:
+    return re.findall(r"[A-Za-z0-9][A-Za-z0-9'\-]*", text)
+
+
+def _person_name_tokens(chunks: list[str]) -> set[str]:
+    """Lowercased words from the names of people in the knowledge base."""
+    person_markers = ("\nDied:", "\nOccupations:", "\nSpouse:", "\nAlso known as:")
+    people = [c for c in chunks if c.startswith("## ") and any(m in c for m in person_markers)]
+    if not people:  # plain .txt knowledge base: every entry is a person
+        people = [c for c in chunks if c.startswith("## ")]
+    tokens = set()
+    for c in people:
+        lines = c.split("\n")
+        names = [lines[0][3:]] + [ln.split(":", 1)[1] for ln in lines if ln.startswith("Also known as:")]
+        for n in names:
+            tokens.update(w.lower().strip("'\"") for w in _words(n) if len(w) >= 3)
+    return tokens - {"jr", "sr", "the", "and"}
+
+
 class Retriever:
     def __init__(self, chunks: list[str]):
         self.chunks = chunks
+        self.name_tokens = _person_name_tokens(chunks)
         self.vectorizer = TfidfVectorizer(stop_words="english")
         self.matrix = self.vectorizer.fit_transform(chunks)
 
@@ -123,7 +165,25 @@ def build_retriever() -> Retriever:
     return Retriever(load_chunks())
 
 
+def is_too_vague(question: str, retriever: Retriever) -> bool:
+    """True when a question has no real subject, or says he/she/they without naming anyone."""
+    raw = _words(question)
+    words = [w.lower() for w in raw]
+    content = [w for w in words if w not in ENGLISH_STOP_WORDS and w not in FILLER and w not in PRONOUNS]
+    if not content:
+        return True
+    if any(w in PRONOUNS for w in words):
+        names = {w.lower() for w in raw
+                 if w.lower() in retriever.name_tokens and (w[0].isupper() or w.lower() not in COMMON_WORD_NAMES)}
+        if not names:
+            return True
+    return False
+
+
 def answer_question(question: str, retriever: Retriever, groq_client, model: str) -> str:
+    if is_too_vague(question, retriever):
+        return CLARIFY_MESSAGE
+
     results = retriever.search(question)
     best_score = results[0][1] if results else 0.0
 
