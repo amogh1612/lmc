@@ -1,0 +1,31 @@
+# Southview Cemetery — Notable Figures Knowledge Base
+#
+# HOW TO EDIT THIS FILE:
+# - Each entry starts with a line beginning "## " followed by the person's name.
+# - Everything below that line (until the next "## ") is their info.
+# - Write in plain sentences — the more detail, the better the answers.
+# - Add as many entries as you want, save the file, and rerun the app.
+
+## Eleanor Whitfield
+Eleanor Whitfield (1842–1919) was the founder of Southview's first public library
+and a leading advocate for women's education in the county. She is buried in the
+Whitfield family plot near the east gate. Her tombstone is notable for its carved
+open-book motif, a tribute to her library work.
+
+## Colonel James T. Hargrove
+Colonel James T. Hargrove (1820–1888) served in the local militia and later became
+the town's second mayor. He is credited with establishing the cemetery itself in
+1861 on land donated from his family farm. His grave, marked by a granite obelisk,
+sits at the highest point of the cemetery grounds.
+
+## Dr. Maria Consuelo Reyes
+Dr. Maria Consuelo Reyes (1901–1976) was the town's first female physician and
+ran a free clinic during the Great Depression. She is remembered for treating
+patients regardless of their ability to pay. Her grave marker includes a small
+carved caduceus symbol.
+
+## Samuel P. Ostrander
+Samuel P. Ostrander (1858–1932) was a railroad engineer who helped bring the
+regional rail line through town in the 1880s, spurring local economic growth.
+He is buried alongside his wife, Clara Ostrander, in the northern section of
+the cemetery.
