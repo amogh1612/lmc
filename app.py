@@ -20,8 +20,9 @@ def main():
 
     client = Groq(api_key=api_key)
     retriever = build_retriever()
+    history = []
 
-    print("Southview Cemetery Q&A — ask about notable figures (Ctrl+C to quit)\n")
+    print("South-View Cemetery Q&A — ask about notable figures (Ctrl+C to quit)\n")
     while True:
         try:
             question = input("You: ").strip()
@@ -32,8 +33,12 @@ def main():
         if not question:
             continue
 
-        answer = answer_question(question, retriever, client, MODEL)
-        print(f"Assistant: {answer}\n")
+        result = answer_question(question, retriever, client, MODEL, history)
+        print(f"Assistant: {result['answer']}")
+        for s in result["sources"]:
+            print(f"  source: {s['title']}" + (f" ({s['url']})" if s.get("url") else ""))
+        print()
+        history += [{"role": "user", "content": question}, {"role": "assistant", "content": result["answer"]}]
 
 
 if __name__ == "__main__":

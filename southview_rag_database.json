@@ -1,9 +1,9 @@
 {
   "database_meta": {
     "name": "South-View Cemetery RAG Knowledge Base",
-    "version": "2.1",
+    "version": "2.2",
     "built_from": "Henderson, D.L. South-View: City of the Dead. Carrelspin Press, Dunwoody, GA, 2018. ISBN 978-0-9985772-0-3",
-    "total_person_records": 307,
+    "total_person_records": 308,
     "primary_biographical_entries": 229,
     "spouse_and_family_mentions": 78,
     "historical_context_chunks": 8,
@@ -13,10 +13,13 @@
       "historical_context": "Thematic narrative chunks about cemetery history and significance",
       "buried_person": "Individual biographical records parsed from the Biographical Dictionary",
       "reference": "Glossaries, quick-reference indexes, appendix data",
-      "faq": "Pre-built question-answer pairs for direct retrieval"
+      "faq": "Pre-built question-answer pairs for direct retrieval",
+      "prominent_figure": "In-depth researched profiles of notable residents, split into sections with per-section web sources"
     },
     "rag_usage_notes": "For semantic search, embed each record's biography/content field. For structured queries (e.g., 'who died in 1977', 'athletes buried here'), filter on death_year, occupations, or era fields. FAQ records are ideal for exact-match retrieval. Historical context chunks should be retrieved for any question about the cemetery's history, founding, significance, or funerary traditions. Cemetery profile should always be included for location/hours/contact queries.",
-    "cleaning_notes": "v2.1: rebuilt people from the Biographical Dictionary only. Removed duplicate second-pass records, photo-caption and epitaph fragments, and records whose names or text were unreadable. Repaired OCR errors, restored names for spouse entries, and separated text that had been merged across entries. Added a 'spouse' field where the book lists a spouse entry."
+    "cleaning_notes": "v2.1: rebuilt people from the Biographical Dictionary only. Removed duplicate second-pass records, photo-caption and epitaph fragments, and records whose names or text were unreadable. Repaired OCR errors, restored names for spouse entries, and separated text that had been merged across entries. Added a 'spouse' field where the book lists a spouse entry.",
+    "prominent_figure_profiles": 12,
+    "v2_2_notes": "Added researched profiles for prominent figures from encyclopedias, archives and news obituaries (see research_notes/). Each section cites its own sources by URL. People not in Henderson (2018) were added as new person records tagged added_by='prominent_research'."
   },
   "cemetery_profile": {
     "id": "southview_cemetery",
@@ -711,7 +714,9 @@
       "source": "Henderson, D.L. South-View: City of the Dead. Carrelspin Press, 2018.",
       "also_known_as": [
         "Julian Bond"
-      ]
+      ],
+      "birth_year": 1940,
+      "prominent": true
     },
     {
       "id": "person_0028",
@@ -1615,7 +1620,12 @@
       ],
       "affiliated_organizations": [],
       "biography": "Postal Worker, Fraternal Leader. Dobbs was a well-known civic and political leader. He married Irene Ophelia Thompson.",
-      "source": "Henderson, D.L. South-View: City of the Dead. Carrelspin Press, 2018."
+      "source": "Henderson, D.L. South-View: City of the Dead. Carrelspin Press, 2018.",
+      "birth_year": 1882,
+      "also_known_as": [
+        "the Grand"
+      ],
+      "prominent": true
     },
     {
       "id": "person_0083",
@@ -1647,7 +1657,12 @@
         "Spelman College"
       ],
       "biography": "Opera Singer. Dobbs was a coloratura soprano who received her first serious vocal study as an undergraduate at Spelman College. Dobbs continued with advanced music studies in New York and Paris. She graduated first in her Spelman class with majors in Spanish and music. She also earned a master's degree in Spanish from Columbia University Teachers College. In 1951, she won first prize in the Geneva International Music Competition, and in 1953, she became the first African American to sing a principal role at the La Scala Opera House in Milan, Italy. In 1956, Dobbs made her debut at the New York Metropolitan Opera Company. She was the first African American woman to be offered a long-term contract with the Met. She was married twice-first to Spanish playwright and journalist, Luis Rodriguez, who died a year into their marriage, then to Swedish journalist Bengt Janzon who predeceased her in 1997. She was the daughter of John Wesley and Irene Thompson Dobbs.",
-      "source": "Henderson, D.L. South-View: City of the Dead. Carrelspin Press, 2018."
+      "source": "Henderson, D.L. South-View: City of the Dead. Carrelspin Press, 2018.",
+      "birth_year": 1925,
+      "also_known_as": [
+        "Mattiwilda Dobbs Janzon"
+      ],
+      "prominent": true
     },
     {
       "id": "person_0085",
@@ -2164,7 +2179,13 @@
         "Atlanta Urban League"
       ],
       "biography": "Educator, Politician, Activist. Hamilton was the first African-American woman in the deep South to be elected as a state legislator. An Atlanta native, Hamilton graduated from Atlanta University and earned a master's degree from Ohio State University. She taught psychology at Clark College, Atlanta University, and Le Moyne Junior College in Memphis, Tennessee. In 1943, she was appointed the first female executive director of the Atlanta Urban League. In a special election in 1965, Hamilton and seven other African Americans were elected to the Georgia legislature. Until then, no African American had served in the Georgia legislature since Reconstruction. Hamilton served in the Georgia senate until 1984. She was a principal architect of the 1973 Atlanta city charter which brought African-Americans onto the Atlanta City Council in proportion to their percentage of the population. After her service in the legislature, she was an advisor to the U. S. Civil Rights Commission. Atlanta's Emory University annually hosts the Grace Towns Hamilton lecture. In 2006, Hamilton was named a Georgia Woman of Achievement. She was the daughter of George Towns and Nellie McNair. She married Henry Cooke Hamilton.",
-      "source": "Henderson, D.L. South-View: City of the Dead. Carrelspin Press, 2018."
+      "source": "Henderson, D.L. South-View: City of the Dead. Carrelspin Press, 2018.",
+      "birth_year": 1907,
+      "also_known_as": [
+        "Grace Hamilton",
+        "Grace Towns"
+      ],
+      "prominent": true
     },
     {
       "id": "person_0116",
@@ -2475,7 +2496,12 @@
         "Atlanta Life Insurance"
       ],
       "biography": "Entrepreneur, Philanthropist. Herndon was the founder of Atlanta Life Insurance Company.",
-      "source": "Henderson, D.L. South-View: City of the Dead. Carrelspin Press, 2018."
+      "source": "Henderson, D.L. South-View: City of the Dead. Carrelspin Press, 2018.",
+      "birth_year": 1858,
+      "also_known_as": [
+        "Alonzo Herndon"
+      ],
+      "prominent": true
     },
     {
       "id": "person_0135",
@@ -2576,7 +2602,12 @@
         "Butler Street YMCA"
       ],
       "biography": "Businessman, Civic Leader. Though he never held a political office, Hill was influential in city affairs and an advisor to city leaders, including Atlanta mayors Sam Massell, Andrew Young, Maynard Jackson, and Kasim Reed. He also advised Martin Luther King Jr. and former Georgia Governor Jimmy Carter. Hill became the first African American president of the Metro Atlanta Chamber of Commerce and the first African American member, and later chair, of the Board of Regents of Georgia's University System. He also served as board chair of the Martin Luther King Jr. Center. A portion of Butler Street was renamed in his honor. Hill was known for his ability to forge alliances between white and African American leaders. Hill earned an MBA in actuarial science from the University of Michigan and went on to become the third president of Atlanta Life Insurance Company. Hill helped launch the Atlanta Inquirer newspaper in the summer of 1960 as a voice of protest against racial discrimination and as an outlet for positive media exposure for the Civil Rights Movement.",
-      "source": "Henderson, D.L. South-View: City of the Dead. Carrelspin Press, 2018."
+      "source": "Henderson, D.L. South-View: City of the Dead. Carrelspin Press, 2018.",
+      "birth_year": 1926,
+      "also_known_as": [
+        "Jesse Hill Jr."
+      ],
+      "prominent": true
     },
     {
       "id": "person_0141",
@@ -2998,7 +3029,14 @@
         "SCLC"
       ],
       "biography": "Minister, Civil Rights Leader. Following the death of his brother, Martin Luther King Jr., King became co-pastor of Ebenezer Baptist Church with his father, Martin Luther King Sr. As a civil rights activist, he had joined his brother in various efforts. During the Birmingham operation, while he was pastor of First Street Baptist Church, his home in Ensley, Alabama, was bombed. He led demonstrations in Louisville, Kentucky, where he pastored Zion Baptist Church. His protests eventually produced an open housing law in Kentucky. In Atlanta, he served on the board of the SCLC. He also worked in the Poor People's Campaign. King drowned in the swimming pool of his Atlanta home. The coroner determined that no foul play was involved in his death.",
-      "source": "Henderson, D.L. South-View: City of the Dead. Carrelspin Press, 2018."
+      "source": "Henderson, D.L. South-View: City of the Dead. Carrelspin Press, 2018.",
+      "birth_year": 1930,
+      "also_known_as": [
+        "A.D. King",
+        "A. D. King",
+        "Rev. A. D. Williams King"
+      ],
+      "prominent": true
     },
     {
       "id": "person_0167",
@@ -3080,7 +3118,14 @@
         "Ebenezer Baptist Church"
       ],
       "biography": "Minister, Civil Rights Leader. King was pastor of Ebenezer Baptist Church for forty-four years. A pioneer civil rights activist, he was involved in the Atlanta Civic and Political League and the NAACP. He led a voting rights march on Atlanta City Hall in 1936 and advocated for equalization of teacher pay. King also served on the boards of Atlanta University and Morehouse College. His epitaph reads, \"I love Everyone,\" and \"Still in Business, Just Moved Upstairs.\" He married Alberta Williams.",
-      "source": "Henderson, D.L. South-View: City of the Dead. Carrelspin Press, 2018."
+      "source": "Henderson, D.L. South-View: City of the Dead. Carrelspin Press, 2018.",
+      "birth_year": 1899,
+      "also_known_as": [
+        "Daddy King",
+        "Michael King",
+        "Rev. Martin Luther King Sr."
+      ],
+      "prominent": true
     },
     {
       "id": "person_0172",
@@ -3100,8 +3145,11 @@
       "source": "Henderson, D.L. South-View: City of the Dead. Carrelspin Press, 2018.",
       "spouse": "Martin Luther King Sr.",
       "also_known_as": [
-        "Alberta King"
-      ]
+        "Alberta King",
+        "Alberta Christine Williams"
+      ],
+      "birth_year": 1903,
+      "prominent": true
     },
     {
       "id": "person_0173",
@@ -4045,7 +4093,13 @@
         "SCLC"
       ],
       "biography": "Entrepreneur, Civic Leader, Philanthropist. Russell was born in Atlanta during the Great Depression. His family, like many others, struggled financially, but Russell was industrious. He began shining shoes and selling Coca Colas while still a child, and by age sixteen, he had managed to save $125 to purchase his first piece of property. The rental income financed Russell's college education. He earned a degree in construction from Tuskegee University, but he learned how to run a business from his father. H.J. Russell and Company would eventually help build a considerable portion of Atlanta's skyline. Russell also branched out into other fields-hotels, restaurants, and media. Russell was the first African American member on the Metro Atlanta Chamber of Commerce, and the second African American president of the Chamber; the first African American president was his close friend Jesse Hill. Russell was friends with many local and national business and political leaders, including Martin Luther King Jr. During the height of the Civil Rights Movement, Russell financed bail bonds for jailed activists, and he was a major donor to the Southern Christian Leadership Conference. Russell served as a board member for a number of national corporations and organizations, such as the U. S. Chamber of Commerce, Wachovia Bank, Citizens Trust Bank, and Georgia Power Company. He married Otelia Hackney. Later, he married Sylvia Anderson, former president of AT&T Georgia.",
-      "source": "Henderson, D.L. South-View: City of the Dead. Carrelspin Press, 2018."
+      "source": "Henderson, D.L. South-View: City of the Dead. Carrelspin Press, 2018.",
+      "birth_year": 1930,
+      "also_known_as": [
+        "Herman J. Russell",
+        "Herman Russell"
+      ],
+      "prominent": true
     },
     {
       "id": "person_0232",
@@ -4511,8 +4565,11 @@
       "biography": "Minister, Legislator. Bishop Turner was a leader in the AME Church and a Georgia state legislator during Reconstruction. His fourth wife was noted religious worker Laura Pearl Lemon.",
       "source": "Henderson, D.L. South-View: City of the Dead. Carrelspin Press, 2018.",
       "also_known_as": [
-        "Bishop Henry McNeal Turner"
-      ]
+        "Bishop Henry McNeal Turner",
+        "Bishop Turner"
+      ],
+      "birth_year": 1834,
+      "prominent": true
     },
     {
       "id": "person_0260",
@@ -5287,6 +5344,56 @@
       "affiliated_organizations": [],
       "biography": "Butler. Young worked as a waiter at several Atlanta restaurants before joining the staff of the Georgia governor's mansion during the administration of Carl Sanders, from 1963 to 1967. At that time, the governor's mansion was located in Atlanta's Ansley Park. In 1967, a new gubernatorial residence was completed on West Paces Ferry Road, and Young continued to work on the mansion staff when Lester Maddox took office on January 1, 1968. During his tenure at the governor's mansion, Young served four additional Georgia governors: Jimmy Carter, George Busbee, Joe Frank Harris, and Zell Miller.",
       "source": "Henderson, D.L. South-View: City of the Dead. Carrelspin Press, 2018."
+    },
+    {
+      "id": "person_0307",
+      "type": "buried_person",
+      "full_name": "Henry Louis Aaron",
+      "last_name": "Aaron",
+      "birth_year": 1934,
+      "death_year": 2021,
+      "era": "21st century",
+      "occupations": [
+        "Baseball Player",
+        "Baseball Executive",
+        "Author"
+      ],
+      "affiliated_organizations": [],
+      "also_known_as": [
+        "Hank Aaron",
+        "Hammerin' Hank"
+      ],
+      "biography": "Henry Louis \"Hank\" Aaron was born on February 5, 1934, in Mobile, Alabama, the third of eight children of Estella and Herbert Aaron. Hank Aaron was married to Billye Aaron, who survived him. His children were Gaile, Hank Jr., Lary, Dorinda and Ceci, and he was also survived by grandchildren. According to the New Georgia Encyclopedia, his daughter Gaile attended Fisk University. Hank Aaron died in Atlanta in 2021. Hank Aaron joined the Negro Leagues' Indianapolis Clowns in spring 1952 at age 18 and led the league with a .467 average. In 1953 he was MVP of the minor-league Sally League. The Boston Braves bought his contract, and he debuted in the majors in 1954, playing for the Milwaukee Braves (1954-1965), the Atlanta Braves (1966-1974) and the Milwaukee Brewers (1975-1976). In 1957 Aaron was National League MVP (.322, 44 home runs, 132 RBI) and won the World Series. He won three Gold Gloves and was selected to 25 All-Star games. On May 17, 1970, he became the first player with both 3,000 hits and 500 home runs. On April 8, 1974, at Atlanta-Fulton County Stadium, Hank Aaron hit No. 715 off the Dodgers' Al Downing, passing Babe Ruth. He retired as a player in 1976 with 755 home runs, a record 2,297 RBI, 3,771 hits, a record 6,856 total bases, a .305 average, 3,298 games, 2,174 runs and 1,477 extra-base hits, the most in MLB history. He was inducted into the Hall of Fame in 1982, his first year of eligibility. Aaron then worked in the Braves front office, reportedly as senior vice president from December 1989, and held posts with Turner Broadcasting.",
+      "source": "Web research; see web_sources",
+      "web_sources": [
+        {
+          "title": "Hank Aaron (1934-2021)",
+          "url": "https://www.georgiaencyclopedia.org/articles/sports-outdoor-recreation/hank-aaron-1934-2021/",
+          "publisher": "New Georgia Encyclopedia"
+        },
+        {
+          "title": "Aaron, Hank",
+          "url": "https://baseballhall.org/hall-of-famers/aaron-hank",
+          "publisher": "National Baseball Hall of Fame and Museum"
+        },
+        {
+          "title": "Hank Aaron obituary",
+          "url": "https://www.ajc.com/news/obituaries/aaron-hank/GX3PZQY26ZALHN4RUXWM3PDPZA",
+          "publisher": "Atlanta Journal-Constitution"
+        },
+        {
+          "title": "The Hammer makes one last trip to spot where he hit No. 715",
+          "url": "https://www.news4jax.com/sports/2021/01/27/the-hammer-makes-one-last-trip-to-spot-where-he-hit-no-715/",
+          "publisher": "Associated Press (via News4JAX)"
+        },
+        {
+          "title": "Baseball icon Hank Aaron dies at 86",
+          "url": "https://abc7ny.com/sports/baseball-icon-hank-aaron-dies-at-86/9905703/",
+          "publisher": "Associated Press (via ABC7 New York)"
+        }
+      ],
+      "prominent": true,
+      "added_by": "prominent_research"
     }
   ],
   "references": [
@@ -5527,6 +5634,2602 @@
       "type": "faq",
       "q": "What were Slave Square and Rest Haven?",
       "a": "Slave Square was the segregated African American burial section at Oakland Cemetery (est. 1850), with 860+ burials by the Civil War's end. In 1877, the Atlanta City Council voted to exhume and mass-reinter its occupants to resell the land. Rest Haven was the segregated African American section at Westview Cemetery (est. 1884), accessible only through a back gate. Both were direct causes of South-View's founding."
+    }
+  ],
+  "prominent_figures": [
+    {
+      "id": "pf_king_sr",
+      "person_id": "person_0171",
+      "full_name": "Martin Luther King Sr.",
+      "also_known_as": [
+        "Daddy King",
+        "Michael King",
+        "Rev. Martin Luther King Sr."
+      ],
+      "birth_year": 1899,
+      "death_year": 1984,
+      "lifespan": "December 19, 1899 – November 11, 1984",
+      "tagline": "Ebenezer Baptist pastor for 44 years, Atlanta voting-rights leader, and father of Martin Luther King Jr.",
+      "occupations": [
+        "Baptist minister",
+        "Civil rights leader",
+        "Author"
+      ],
+      "burial": "Martin Luther King Sr. is buried at South-View Cemetery beside his wife Alberta Williams King, beneath a combined marker near the front gates. Reported by the Atlanta Journal-Constitution; Find a Grave places the plot next to First Road, paralleling Jonesboro Road.",
+      "sections": [
+        {
+          "heading": "Early life and family",
+          "text": "Martin Luther King Sr. was born Michael King on December 19, 1899, in Stockbridge, Georgia, the eldest son of James and Delia King. (The Stanford King Institute gives 1897; see Where sources disagree.) In 1918 Michael King left Stockbridge for Atlanta, joining his sister Woodie there. On Thanksgiving Day 1926 he married Alberta Christine Williams at Ebenezer Baptist Church, where her father, Rev. A. D. Williams, was pastor. The couple had three children: Willie Christine (born 1927), Michael Luther Jr., later known as Martin Luther King Jr. (born 1929), and Alfred Daniel Williams (born 1930). Michael King later changed his own name, and the name of his eldest son, to Martin Luther King. He outlived his wife and both of his sons.",
+          "sources": [
+            1,
+            4,
+            5
+          ]
+        },
+        {
+          "heading": "Education",
+          "text": "Martin Luther King Sr. had limited schooling as a boy, attending the Stockbridge Colored School for only three to five months a year. After moving to Atlanta he studied at Bryant Preparatory School, and in 1926 he was admitted to Morehouse College, where he earned a bachelor's degree in theology. The Stanford King Institute indicates he received that degree around 1930, shortly before the birth of his son A. D.; other accounts give 1931 (see Where sources disagree). In 1975 Dillard University awarded Martin Luther King Sr. an honorary Doctor of Humane Letters.",
+          "sources": [
+            1,
+            7
+          ]
+        },
+        {
+          "heading": "Career and achievements",
+          "text": "Martin Luther King Sr. pastored several churches in College Park, Georgia, in the early 1920s while he was still studying. In 1931 he succeeded his father-in-law, Rev. A. D. Williams, as pastor of Ebenezer Baptist Church in Atlanta, and he served Ebenezer for 44 years in all. In 1934 he attended the Baptist World Alliance meeting in Berlin. He served on the boards of Atlanta University, Morehouse College and the National Baptist Convention. In 1964 he traveled to Oslo, Norway, for the ceremony at which his son Martin Luther King Jr. received the Nobel Peace Prize. A strong supporter of Jimmy Carter, Martin Luther King Sr. delivered invocations at the Democratic National Conventions of 1976 and 1980.",
+          "sources": [
+            1
+          ]
+        },
+        {
+          "heading": "Civil rights and civic life",
+          "text": "Martin Luther King Sr. was a local leader in the NAACP and in the Atlanta Civic and Political League. In 1935 he joined other ministers of the Atlanta Baptist Ministers Union in calling for Black voter registration, and on March 6, 1936, he spoke at an NAACP mass meeting at Wheat Street Baptist Church. He is widely reported to have led a voting-rights march on Atlanta City Hall in 1936; the Stanford King Institute instead describes a 1939 proposal for a voter registration drive beginning with a march to City Hall. He personally defied segregation, for example by riding the whites-only City Hall elevator to reach the voter registrar. In 1940 he chaired the Committee on the Equalization of Teachers' Salaries, a campaign that, with NAACP legal help, brought significant gains for Black teachers. During the Montgomery bus boycott, Martin Luther King Sr. unsuccessfully urged his son not to return to Montgomery.",
+          "sources": [
+            1,
+            2,
+            3,
+            9
+          ]
+        },
+        {
+          "heading": "Legacy and honors",
+          "text": "Martin Luther King Sr. became widely known as \"Daddy King,\" the name he used for the title of his 1980 autobiography, Daddy King: An Autobiography. His 44 years in the pulpit of Ebenezer Baptist Church, his early work for Black voter registration in Atlanta and his campaign to equalize teachers' salaries made him a civic leader in his own right, not only the father of Martin Luther King Jr. Dillard University recognized him with an honorary Doctor of Humane Letters in 1975. Martin Luther King Sr. died in Atlanta on November 11, 1984, having outlived his wife Alberta and both of his sons, and he rests beside Alberta at South-View Cemetery.",
+          "sources": [
+            1,
+            5,
+            6,
+            7
+          ]
+        },
+        {
+          "heading": "Did you know?",
+          "text": "Martin Luther King Sr. was born Michael King and later changed both his own name and his eldest son's name to Martin Luther King. He was pastor of Ebenezer Baptist Church for 44 years, beginning in 1931. He gave the invocation at the 1976 and 1980 Democratic National Conventions. He outlived his wife and both sons and is buried beside Alberta King under a combined marker at South-View. Martin Luther King Jr. was also first buried at South-View after his assassination in April 1968, before being moved about two years later to the King Center tomb on Auburn Avenue.",
+          "sources": [
+            1,
+            5
+          ]
+        },
+        {
+          "heading": "Where sources disagree",
+          "text": "Sources differ on several points about Martin Luther King Sr. Birth year: the Stanford King Institute says he was born December 19, 1897, while Find a Grave, Wikipedia and the Civil Rights Digital Library authority record give 1899; his reported age of 84 at death also fits 1899, so this profile uses 1899. City Hall march: Find a Grave and a report attributed to 11Alive say he led Atlanta's first Black voting-rights march, on City Hall, in 1936, while the Stanford King Institute describes a 1939 proposal for a registration drive starting with a City Hall march; these may be two separate events. Cause of death: Wikipedia, citing a New York Times obituary that could not be checked, says he died of a heart attack at Crawford W. Long Hospital, whereas a cemetery travel blog says he died after a stroke; Stanford gives no cause. Morehouse degree: Stanford implies he finished his theology degree around 1930, while Wikipedia says he began in 1925 and earned a Bachelor of Theology in 1931.",
+          "sources": [
+            1,
+            4,
+            6,
+            8,
+            9,
+            10
+          ]
+        }
+      ],
+      "timeline": [
+        {
+          "year": "1899",
+          "event": "Born Michael King on December 19 in Stockbridge, Georgia (Stanford gives 1897).",
+          "sources": [
+            4,
+            1
+          ]
+        },
+        {
+          "year": "1918",
+          "event": "Left Stockbridge for Atlanta, joining his sister Woodie.",
+          "sources": [
+            1
+          ]
+        },
+        {
+          "year": "1926",
+          "event": "Admitted to Morehouse College; married Alberta Christine Williams on Thanksgiving Day at Ebenezer.",
+          "sources": [
+            1
+          ]
+        },
+        {
+          "year": "1931",
+          "event": "Succeeded A. D. Williams as pastor of Ebenezer Baptist Church, beginning 44 years of service.",
+          "sources": [
+            1
+          ]
+        },
+        {
+          "year": "1934",
+          "event": "Attended the Baptist World Alliance meeting in Berlin.",
+          "sources": [
+            1
+          ]
+        },
+        {
+          "year": "1935",
+          "event": "Joined the Atlanta Baptist Ministers Union in calling for Black voter registration.",
+          "sources": [
+            2
+          ]
+        },
+        {
+          "year": "1936",
+          "event": "Spoke at an NAACP mass meeting at Wheat Street Baptist Church on March 6.",
+          "sources": [
+            3
+          ]
+        },
+        {
+          "year": "1939",
+          "event": "Proposed a voter registration drive beginning with a march to Atlanta City Hall (per Stanford).",
+          "sources": [
+            1
+          ]
+        },
+        {
+          "year": "1940",
+          "event": "Chaired the Committee on the Equalization of Teachers' Salaries.",
+          "sources": [
+            1
+          ]
+        },
+        {
+          "year": "1964",
+          "event": "Traveled to Oslo for Martin Luther King Jr.'s Nobel Peace Prize ceremony.",
+          "sources": [
+            1
+          ]
+        },
+        {
+          "year": "1975",
+          "event": "Received an honorary Doctor of Humane Letters from Dillard University.",
+          "sources": [
+            7
+          ]
+        },
+        {
+          "year": "1976",
+          "event": "Delivered the invocation at the Democratic National Convention.",
+          "sources": [
+            1
+          ]
+        },
+        {
+          "year": "1980",
+          "event": "Delivered a second Democratic National Convention invocation; published Daddy King: An Autobiography.",
+          "sources": [
+            1
+          ]
+        },
+        {
+          "year": "1984",
+          "event": "Died in Atlanta on November 11; buried at South-View beside Alberta King.",
+          "sources": [
+            1,
+            5
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "title": "King, Martin Luther, Sr.",
+          "url": "https://kinginstitute.stanford.edu/king-martin-luther-sr",
+          "publisher": "Martin Luther King, Jr. Research and Education Institute, Stanford University"
+        },
+        {
+          "title": "Atlanta Baptist Ministers Union calls for Black voter registration",
+          "url": "https://kinginstitute.stanford.edu/atlanta-baptist-ministers-union-calls-black-voter-registration",
+          "publisher": "Martin Luther King, Jr. Research and Education Institute, Stanford University"
+        },
+        {
+          "title": "King Sr. speaks at NAACP mass meeting in Atlanta",
+          "url": "https://kinginstitute.stanford.edu/king-sr-speaks-naacp-mass-meeting-atlanta",
+          "publisher": "Martin Luther King, Jr. Research and Education Institute, Stanford University"
+        },
+        {
+          "title": "King, Martin Luther, Sr., 1899-1984",
+          "url": "https://crdl.usg.edu/people/king_martin_luther_sr_1899_1984",
+          "publisher": "Civil Rights Digital Library, Digital Library of Georgia"
+        },
+        {
+          "title": "Martin Luther King Atlanta and other historic sites",
+          "url": "https://www.ajc.com/lifestyles/holiday/martin-luther-king-atlanta-other-historic-sites/HNHODP0HjozTYTzOf4V2sK/",
+          "publisher": "The Atlanta Journal-Constitution"
+        },
+        {
+          "title": "Martin Luther King Sr. memorial",
+          "url": "https://www.findagrave.com/memorial/9795",
+          "publisher": "Find a Grave"
+        },
+        {
+          "title": "Commencement honorees (archived)",
+          "url": "https://web.archive.org/web/20230621071651/https://www.dillard.edu/commencement/honorees.php",
+          "publisher": "Dillard University"
+        },
+        {
+          "title": "Martin Luther King Sr.",
+          "url": "https://en.wikipedia.org/wiki/Martin_Luther_King_Sr.",
+          "publisher": "Wikipedia"
+        },
+        {
+          "title": "Rev. Martin Luther King Sr., advocate for social change",
+          "url": "https://11alive.com/article/news/local/black-history/rev-martin-luther-king-sr-advocate-for-social-change/85-68774415",
+          "publisher": "11Alive"
+        },
+        {
+          "title": "Free at last: visiting Atlanta's South-View Cemetery, part III",
+          "url": "https://adventuresincemeteryhopping.com/2015/10/30/free-at-last-visiting-atlantas-south-view-cemetery-part-iii/",
+          "publisher": "Adventures in Cemetery Hopping"
+        }
+      ]
+    },
+    {
+      "id": "pf_alberta_king",
+      "person_id": "person_0172",
+      "full_name": "Alberta Williams King",
+      "also_known_as": [
+        "Alberta Christine Williams",
+        "Alberta King"
+      ],
+      "birth_year": 1903,
+      "death_year": 1974,
+      "lifespan": "September 13, 1903 – June 30, 1974",
+      "tagline": "Ebenezer Baptist organist for 40 years and choir founder, mother of Martin Luther King Jr.",
+      "occupations": [
+        "Church organist",
+        "Choir founder",
+        "Teacher"
+      ],
+      "burial": "Alberta Williams King is buried at South-View Cemetery with her husband, Martin Luther King Sr., beneath a combined marker near the front gates. Reported by the Atlanta Journal-Constitution; Find a Grave records the inscription \"...Her Life Shall Be Filled With Music...\".",
+      "sections": [
+        {
+          "heading": "Early life and family",
+          "text": "Alberta Williams King was born Alberta Christine Williams on September 13, 1903, in Atlanta, according to the Stanford King Institute (Find a Grave gives 1904). Alberta Williams was the only surviving child of Jennie Celeste Williams and Rev. Adam Daniel (A. D.) Williams, pastor of Ebenezer Baptist Church. Her parents are also buried at South-View Cemetery, along with two of their children who died in infancy. On Thanksgiving Day 1926 she married Michael King, who later took the name Martin Luther King Sr. and succeeded her father as Ebenezer's pastor. The couple had three children: Willie Christine, Martin Luther King Jr. and Alfred Daniel.",
+          "sources": [
+            1,
+            2,
+            5
+          ]
+        },
+        {
+          "heading": "Education",
+          "text": "Alberta Williams King attended Spelman Seminary for high school and then earned a teaching certificate from Hampton Normal and Industrial Institute in Virginia. She taught briefly but had to stop because the local school board did not allow married women to teach. Years later, as a married mother of three, Alberta Williams King completed a bachelor's degree at Morris Brown College in Atlanta in 1938.",
+          "sources": [
+            1
+          ]
+        },
+        {
+          "heading": "Career and achievements",
+          "text": "Alberta Williams King served as organist at Ebenezer Baptist Church from 1932 to 1972, a span of 40 years, and she founded the Ebenezer choir. From 1950 to 1962 she was also organist for the Women's Auxiliary of the National Baptist Convention. Beyond music, Alberta Williams King was active in community and reform organizations, including the YWCA, the NAACP and the Women's International League for Peace and Freedom. Her work at the organ and with the choir made music a central part of worship at Ebenezer for four decades, during which her husband and later her sons served in its pulpit.",
+          "sources": [
+            1
+          ]
+        },
+        {
+          "heading": "Legacy and honors",
+          "text": "Alberta Williams King was shot during Sunday services at Ebenezer Baptist Church on June 30, 1974, while she was playing the organ, and died later that day. The gunman, Marcus Chenault of Ohio, claimed that \"All Christians are my enemies.\" According to news reports, she was playing \"The Lord's Prayer\"; deacon Edward Boykin was also killed and congregant Jimmie Mitchell was wounded. Chenault's original target was reportedly Martin Luther King Sr.; he claimed insanity but was convicted and sentenced to death. Her death came six years after her son Martin Luther King Jr. was assassinated. Alberta Williams King is remembered at South-View, where her gravestone reads \"...Her Life Shall Be Filled With Music...\".",
+          "sources": [
+            1,
+            4,
+            6,
+            7,
+            8
+          ]
+        },
+        {
+          "heading": "Did you know?",
+          "text": "Alberta Williams King was killed at the organ of Ebenezer Baptist Church on June 30, 1974, six years after her son's assassination. She played the organ at Ebenezer for 40 years, from 1932 to 1972, and founded its choir. Her gravestone at South-View reads \"...Her Life Shall Be Filled With Music...\". Her father, A. D. Williams, was Ebenezer's pastor before her husband, and her parents are also buried at South-View. She earned her bachelor's degree from Morris Brown College in 1938, as a married mother of three.",
+          "sources": [
+            1,
+            4,
+            5
+          ]
+        },
+        {
+          "heading": "Where sources disagree",
+          "text": "Sources disagree on Alberta Williams King's birth year and age. The Stanford King Institute says she was born September 13, 1903, and died at age 70, while Find a Grave gives September 13, 1904, and an age of 69 at death, and Wikipedia and other outlets also report 69. Each pair of figures is internally consistent; this profile uses the Stanford date as the more authoritative source. Sources also differ on the age of her killer, Marcus Chenault: Stanford gives 21, while Wikipedia reportedly gives 23.",
+          "sources": [
+            1,
+            4,
+            9
+          ]
+        }
+      ],
+      "timeline": [
+        {
+          "year": "1903",
+          "event": "Born Alberta Christine Williams on September 13 in Atlanta (Find a Grave gives 1904).",
+          "sources": [
+            1
+          ]
+        },
+        {
+          "year": "1926",
+          "event": "Married Michael King, later Martin Luther King Sr., on Thanksgiving Day.",
+          "sources": [
+            1
+          ]
+        },
+        {
+          "year": "1929",
+          "event": "Gave birth to Michael Luther Jr., later Martin Luther King Jr.",
+          "sources": [
+            2
+          ]
+        },
+        {
+          "year": "1932",
+          "event": "Began 40 years as organist of Ebenezer Baptist Church.",
+          "sources": [
+            1
+          ]
+        },
+        {
+          "year": "1938",
+          "event": "Earned a bachelor's degree from Morris Brown College.",
+          "sources": [
+            1
+          ]
+        },
+        {
+          "year": "1950",
+          "event": "Became organist for the Women's Auxiliary of the National Baptist Convention, serving until 1962.",
+          "sources": [
+            1
+          ]
+        },
+        {
+          "year": "1972",
+          "event": "Concluded her tenure as Ebenezer's organist.",
+          "sources": [
+            1
+          ]
+        },
+        {
+          "year": "1974",
+          "event": "Shot and killed at the Ebenezer organ during Sunday services on June 30.",
+          "sources": [
+            1
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "title": "King, Alberta Williams",
+          "url": "https://kinginstitute.stanford.edu/king-alberta-williams",
+          "publisher": "Martin Luther King, Jr. Research and Education Institute, Stanford University"
+        },
+        {
+          "title": "King, Martin Luther, Sr.",
+          "url": "https://kinginstitute.stanford.edu/king-martin-luther-sr",
+          "publisher": "Martin Luther King, Jr. Research and Education Institute, Stanford University"
+        },
+        {
+          "title": "Martin Luther King Atlanta and other historic sites",
+          "url": "https://www.ajc.com/lifestyles/holiday/martin-luther-king-atlanta-other-historic-sites/HNHODP0HjozTYTzOf4V2sK/",
+          "publisher": "The Atlanta Journal-Constitution"
+        },
+        {
+          "title": "Alberta Christine Williams King memorial",
+          "url": "https://www.findagrave.com/memorial/9796",
+          "publisher": "Find a Grave"
+        },
+        {
+          "title": "Free at last: visiting Atlanta's South-View Cemetery, part III",
+          "url": "https://adventuresincemeteryhopping.com/2015/10/30/free-at-last-visiting-atlantas-south-view-cemetery-part-iii/",
+          "publisher": "Adventures in Cemetery Hopping"
+        },
+        {
+          "title": "The murder of Alberta King",
+          "url": "https://www.atlantamagazine.com/history/the-murder-of-alberta-king/",
+          "publisher": "Atlanta Magazine"
+        },
+        {
+          "title": "King family remembers Alberta Williams King 50 years after Ebenezer Baptist Church deadly shooting",
+          "url": "https://www.wsbtv.com/news/local/king-family-remembers-alberta-williams-king-50-years-after-ebenezer-baptist-church-deadly-shooting/C5IS77OIMJEBHCPCHIR5QEX3N4",
+          "publisher": "WSB-TV"
+        },
+        {
+          "title": "NNPA article on Alberta Williams King",
+          "url": "https://nnpa.org/?p=94045",
+          "publisher": "National Newspaper Publishers Association"
+        },
+        {
+          "title": "Alberta Williams King",
+          "url": "https://en.wikipedia.org/wiki/Alberta_Williams_King",
+          "publisher": "Wikipedia"
+        }
+      ]
+    },
+    {
+      "id": "pf_ad_king",
+      "person_id": "person_0166",
+      "full_name": "Alfred Daniel Williams King",
+      "also_known_as": [
+        "A.D. King",
+        "A. D. King",
+        "Rev. A. D. Williams King"
+      ],
+      "birth_year": 1930,
+      "death_year": 1969,
+      "lifespan": "July 30, 1930 – July 21, 1969",
+      "tagline": "Baptist pastor and civil rights activist, younger brother of Martin Luther King Jr.",
+      "occupations": [
+        "Baptist minister",
+        "Civil rights activist"
+      ],
+      "burial": "A.D. King is buried at South-View Cemetery, according to a cemetery travel blog and Wikipedia's list of South-View burials. Our research found no obituary or plot location confirming it.",
+      "sections": [
+        {
+          "heading": "Early life and family",
+          "text": "Alfred Daniel Williams King, known as \"A. D.\" to family and friends, was born July 30, 1930, in Atlanta, the son of Alberta Williams King and Martin Luther King Sr. A.D. King was the younger brother of Martin Luther King Jr., his only brother, and of Willie Christine King (later Farris). On June 17, 1950, A.D. King married Naomi Barber, and the couple had five children. Their daughter Alveda, born in 1951, was the first King grandchild. Their son Vernon died in 2009 at age 49.",
+          "sources": [
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "heading": "Education",
+          "text": "A.D. King married Naomi Barber as a teenager, in 1950, before he attended college. He initially resisted entering the ministry, but during the 1950s he assisted his father at Ebenezer Baptist Church in Atlanta. A.D. King went on to graduate from Morehouse College in 1959, the same year he took up his first pastorate, at Mount Vernon First Baptist Church in Newnan, Georgia.",
+          "sources": [
+            1,
+            2
+          ]
+        },
+        {
+          "heading": "Career and achievements",
+          "text": "A.D. King served as pastor of Mount Vernon First Baptist Church in Newnan, Georgia, beginning in 1959. He then moved to Alabama to lead First Street Baptist Church in Ensley, near Birmingham; the Stanford King Institute dates this to 1963, while the Atlanta Journal-Constitution says 1961. In 1965 A.D. King became pastor of Zion Baptist Church in Louisville, Kentucky. In September 1968, months after his brother's assassination, he was installed as co-pastor of Ebenezer Baptist Church in Atlanta alongside his father.",
+          "sources": [
+            1,
+            2
+          ]
+        },
+        {
+          "heading": "Civil rights and civic life",
+          "text": "A.D. King was arrested with his brother Martin Luther King Jr. and about 70 others at an Atlanta lunch-counter sit-in in October 1960. In 1963 he was a leader of the Birmingham Campaign and was arrested several times. On May 11, 1963, the Saturday before Mother's Day, his Birmingham home was bombed; a second bomb collapsed the front of the house after the family had left the front room. In August 1963, after the bombing of a Black lawyer's home set off rioting, A.D. King climbed onto a car and told the crowd, \"If you're going to kill someone, then kill me....\" In Louisville he formed the Kentucky Christian Leadership Conference and fought for fair housing, winning an open-housing ordinance in 1968. On April 4, 1968, he was at the Lorraine Motel in Memphis, in the room beneath his brother's. Afterward he was mentioned as a possible SCLC leader but did not pursue it, staying active in the Poor People's Campaign.",
+          "sources": [
+            1,
+            2
+          ]
+        },
+        {
+          "heading": "Legacy and honors",
+          "text": "A.D. King died on July 21, 1969, at age 38, about 15 months after his brother's assassination. He was found at the bottom of the swimming pool at his Atlanta home by his son Derek, the morning after a July 20 phone call, while his wife Naomi was vacationing in Jamaica. His death was officially ruled an accidental drowning. Some family members have disputed that ruling (see Where sources disagree). His widow, Naomi King, later founded the A.D. King Foundation with Atlanta Metropolitan State College professor Babs Onabanjo, and his life is the subject of the 2009 documentary \"A.D. King: Brother to the Dreamer.\"",
+          "sources": [
+            1,
+            2
+          ]
+        },
+        {
+          "heading": "Did you know?",
+          "text": "A.D. King was Martin Luther King Jr.'s only brother, and his daughter Alveda King was the first King grandchild. His Birmingham home was bombed on May 11, 1963. He won a campaign for an open-housing ordinance in Louisville, Kentucky, in 1968. He was at the Lorraine Motel in Memphis when his brother was assassinated on April 4, 1968. A.D. King died about 15 months later, on July 21, 1969, when he was found in his home swimming pool.",
+          "sources": [
+            1,
+            2
+          ]
+        },
+        {
+          "heading": "Where sources disagree",
+          "text": "A.D. King's death on July 21, 1969, was officially ruled an accidental drowning. Members of his family dispute that ruling: according to the Atlanta Journal-Constitution, his widow Naomi King said, \"Absolutely, he was murdered,\" and his daughter Alveda King said, \"Daddy was killed and put in the pool.\" Andrew Young, by contrast, told the newspaper he believed A.D. King had a heart attack and that \"There was never any evidence of foul play.\" Sources also differ on smaller details. His age at death is 38 according to the Stanford King Institute and the Atlanta Journal-Constitution, which matches his birth date, but a cemetery travel blog says 39. Stanford dates his move to Ensley, Alabama, to 1963, while the Atlanta Journal-Constitution says 1961. The newspaper lists his children as Alveda, Alfred, Derek, Esther and Vernon, while Wikipedia lists Alveda, Alfred Jr., Derek, Darlene and Vernon.",
+          "sources": [
+            1,
+            2,
+            4,
+            6
+          ]
+        }
+      ],
+      "timeline": [
+        {
+          "year": "1930",
+          "event": "Born July 30 in Atlanta to Alberta Williams King and Martin Luther King Sr.",
+          "sources": [
+            1
+          ]
+        },
+        {
+          "year": "1950",
+          "event": "Married Naomi Barber on June 17.",
+          "sources": [
+            1
+          ]
+        },
+        {
+          "year": "1959",
+          "event": "Graduated from Morehouse College; became pastor of Mount Vernon First Baptist Church in Newnan, Georgia.",
+          "sources": [
+            1
+          ]
+        },
+        {
+          "year": "1960",
+          "event": "Arrested with Martin Luther King Jr. and about 70 others at an Atlanta lunch-counter sit-in.",
+          "sources": [
+            1
+          ]
+        },
+        {
+          "year": "1963",
+          "event": "Led in the Birmingham Campaign; his Birmingham home was bombed on May 11.",
+          "sources": [
+            1,
+            2
+          ]
+        },
+        {
+          "year": "1963",
+          "event": "Became pastor of First Street Baptist Church in Ensley, Alabama (AJC gives 1961).",
+          "sources": [
+            1
+          ]
+        },
+        {
+          "year": "1965",
+          "event": "Became pastor of Zion Baptist Church in Louisville, Kentucky.",
+          "sources": [
+            1
+          ]
+        },
+        {
+          "year": "1968",
+          "event": "Was at the Lorraine Motel in Memphis when his brother was assassinated on April 4.",
+          "sources": [
+            2
+          ]
+        },
+        {
+          "year": "1968",
+          "event": "Won a campaign for a Louisville open-housing ordinance.",
+          "sources": [
+            1
+          ]
+        },
+        {
+          "year": "1968",
+          "event": "Installed as co-pastor of Ebenezer Baptist Church in September.",
+          "sources": [
+            1
+          ]
+        },
+        {
+          "year": "1969",
+          "event": "Found drowned in his home pool on July 21; ruled accidental, a ruling some family members dispute.",
+          "sources": [
+            1,
+            2
+          ]
+        },
+        {
+          "year": "2009",
+          "event": "Documentary \"A.D. King: Brother to the Dreamer\" released.",
+          "sources": [
+            2
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "title": "King, Alfred Daniel Williams",
+          "url": "https://kinginstitute.stanford.edu/king-alfred-daniel-williams",
+          "publisher": "Martin Luther King, Jr. Research and Education Institute, Stanford University"
+        },
+        {
+          "title": "The forgotten King",
+          "url": "https://www.ajc.com/news/local/the-forgotten-king/H9AOYuODaj2VyFgHYdtbBO/",
+          "publisher": "The Atlanta Journal-Constitution"
+        },
+        {
+          "title": "King, Martin Luther, Sr.",
+          "url": "https://kinginstitute.stanford.edu/king-martin-luther-sr",
+          "publisher": "Martin Luther King, Jr. Research and Education Institute, Stanford University"
+        },
+        {
+          "title": "Free at last: visiting Atlanta's South-View Cemetery, part III",
+          "url": "https://adventuresincemeteryhopping.com/2015/10/30/free-at-last-visiting-atlantas-south-view-cemetery-part-iii/",
+          "publisher": "Adventures in Cemetery Hopping"
+        },
+        {
+          "title": "South-View Cemetery",
+          "url": "https://en.wikipedia.org/wiki/South-View_Cemetery",
+          "publisher": "Wikipedia"
+        },
+        {
+          "title": "Alfred Daniel King",
+          "url": "https://en.wikipedia.org/wiki/Alfred_Daniel_King",
+          "publisher": "Wikipedia"
+        }
+      ]
+    },
+    {
+      "id": "pf_aaron",
+      "person_id": "person_0307",
+      "full_name": "Henry Louis Aaron",
+      "also_known_as": [
+        "Hank Aaron",
+        "Hammerin' Hank"
+      ],
+      "birth_year": 1934,
+      "death_year": 2021,
+      "lifespan": "February 5, 1934 – January 22, 2021",
+      "tagline": "Hall of Famer who broke Babe Ruth's home run record in Atlanta in 1974 and finished with 755 home runs",
+      "occupations": [
+        "Baseball Player",
+        "Baseball Executive",
+        "Author"
+      ],
+      "burial": "Buried at South-View Cemetery on January 27, 2021, after his funeral at Friendship Baptist Church, as reported by the Associated Press, which calls South-View \"the oldest Black burial ground in Atlanta.\"",
+      "sections": [
+        {
+          "heading": "Early life and family",
+          "text": "Henry Louis \"Hank\" Aaron was born on February 5, 1934, in Mobile, Alabama, the third of eight children of Estella and Herbert Aaron. Hank Aaron was married to Billye Aaron, who survived him. His children were Gaile, Hank Jr., Lary, Dorinda and Ceci, and he was also survived by grandchildren. According to the New Georgia Encyclopedia, his daughter Gaile attended Fisk University. Hank Aaron died in Atlanta in 2021.",
+          "sources": [
+            1,
+            3
+          ]
+        },
+        {
+          "heading": "Education",
+          "text": "Hank Aaron grew up in Mobile, Alabama, where he was born in 1934. According to the New Georgia Encyclopedia, Henry Louis Aaron attended two schools in Mobile: Central High School and the Josephine Allen Institute. In the spring of 1952, at age 18, Hank Aaron joined the Indianapolis Clowns of the Negro Leagues as a shortstop, beginning the professional baseball career that made him famous.",
+          "sources": [
+            1
+          ]
+        },
+        {
+          "heading": "Career and achievements",
+          "text": "Hank Aaron joined the Negro Leagues' Indianapolis Clowns in spring 1952 at age 18 and led the league with a .467 average. In 1953 he was MVP of the minor-league Sally League. The Boston Braves bought his contract, and he debuted in the majors in 1954, playing for the Milwaukee Braves (1954-1965), the Atlanta Braves (1966-1974) and the Milwaukee Brewers (1975-1976). In 1957 Aaron was National League MVP (.322, 44 home runs, 132 RBI) and won the World Series. He won three Gold Gloves and was selected to 25 All-Star games. On May 17, 1970, he became the first player with both 3,000 hits and 500 home runs. On April 8, 1974, at Atlanta-Fulton County Stadium, Hank Aaron hit No. 715 off the Dodgers' Al Downing, passing Babe Ruth. He retired as a player in 1976 with 755 home runs, a record 2,297 RBI, 3,771 hits, a record 6,856 total bases, a .305 average, 3,298 games, 2,174 runs and 1,477 extra-base hits, the most in MLB history. He was inducted into the Hall of Fame in 1982, his first year of eligibility. Aaron then worked in the Braves front office, reportedly as senior vice president from December 1989, and held posts with Turner Broadcasting.",
+          "sources": [
+            1,
+            2,
+            3,
+            5
+          ]
+        },
+        {
+          "heading": "Civil rights and civic life",
+          "text": "Hank Aaron's public role extended beyond baseball. Speaking at Aaron's funeral, former President Bill Clinton said that Aaron's 1992 endorsement had helped him carry Georgia. In 2010 Hank Aaron was inducted as a Georgia Trustee. In 1991 he published his autobiography, I Had a Hammer, written with Lonnie Wheeler. After his death, his family asked that, in lieu of flowers, donations be made to the Chasing the Dream Foundation in Atlanta.",
+          "sources": [
+            1,
+            3,
+            4
+          ]
+        },
+        {
+          "heading": "Legacy and honors",
+          "text": "Hank Aaron was inducted into the Baseball Hall of Fame in 1982 and received the Presidential Medal of Freedom from President George W. Bush in 2002. His career home run record stood until Barry Bonds broke it in August 2007, and he still holds MLB records for RBI and total bases. Atlanta has a Hank Aaron Drive, and a display marks where No. 715 landed at the former Atlanta-Fulton County Stadium site; the stadium was imploded in 1997. Muhammad Ali called him \"the only man I idolize more than myself.\" Hank Aaron died in Atlanta on January 22, 2021, of natural causes at 86. The Braves held a memorial at Truist Park, and his funeral on January 27 at Friendship Baptist Church, limited to about 50 people by COVID-19 rules, featured Bill Clinton, Bud Selig and Andrew Young, plus a video message from Jimmy Carter. The hearse passed the site of No. 715 and Hank Aaron Drive on the way to South-View Cemetery, also the resting place of John Lewis and Julian Bond.",
+          "sources": [
+            1,
+            2,
+            4
+          ]
+        },
+        {
+          "heading": "Did you know?",
+          "text": "Hank Aaron's funeral procession detoured past the spot where he hit home run No. 715 on its way to South-View Cemetery. He still holds Major League Baseball records for runs batted in (2,297) and total bases (6,856). Even without his 755 home runs, Hank Aaron would still have 3,016 hits. He began his professional career in the Negro Leagues with the Indianapolis Clowns in 1952. Bill Clinton spoke at his funeral and said Aaron's 1992 endorsement helped him carry Georgia.",
+          "sources": [
+            1,
+            2,
+            4
+          ]
+        },
+        {
+          "heading": "Where sources disagree",
+          "text": "Sources disagree on how many times Hank Aaron was an All-Star. The Baseball Hall of Fame and the New Georgia Encyclopedia both say he had 25 All-Star selections, while the Atlanta Journal-Constitution obituary calls him a \"20-time All-Star.\" This profile uses 25, the figure given by the two more authoritative sources. Sources also differ in detail on his front-office career: an AP report (seen as a search summary) says he worked for the Braves from 1976 and was senior vice president from December 1989, while the New Georgia Encyclopedia says only that he held several posts with the Braves and Turner Broadcasting.",
+          "sources": [
+            1,
+            2,
+            3,
+            5
+          ]
+        }
+      ],
+      "timeline": [
+        {
+          "year": "1934",
+          "event": "Born February 5 in Mobile, Alabama.",
+          "sources": [
+            1
+          ]
+        },
+        {
+          "year": "1952",
+          "event": "Joined the Negro Leagues' Indianapolis Clowns as a shortstop and led the league with a .467 average.",
+          "sources": [
+            1
+          ]
+        },
+        {
+          "year": "1953",
+          "event": "Named MVP of the minor-league Sally League.",
+          "sources": [
+            1
+          ]
+        },
+        {
+          "year": "1954",
+          "event": "Made his major league debut with the Milwaukee Braves after the Boston Braves bought his Clowns contract.",
+          "sources": [
+            1,
+            2
+          ]
+        },
+        {
+          "year": "1957",
+          "event": "Won the National League MVP award and the World Series with the Braves.",
+          "sources": [
+            2
+          ]
+        },
+        {
+          "year": "1966",
+          "event": "Moved with the Braves from Milwaukee to Atlanta.",
+          "sources": [
+            4
+          ]
+        },
+        {
+          "year": "1970",
+          "event": "Became the first player with both 3,000 hits and 500 home runs on May 17.",
+          "sources": [
+            1
+          ]
+        },
+        {
+          "year": "1974",
+          "event": "Hit home run No. 715 off Al Downing at Atlanta-Fulton County Stadium on April 8, passing Babe Ruth.",
+          "sources": [
+            1,
+            2
+          ]
+        },
+        {
+          "year": "1976",
+          "event": "Retired as a player after two seasons with the Milwaukee Brewers.",
+          "sources": [
+            1,
+            2
+          ]
+        },
+        {
+          "year": "1982",
+          "event": "Inducted into the Baseball Hall of Fame in his first year of eligibility.",
+          "sources": [
+            1,
+            2
+          ]
+        },
+        {
+          "year": "1991",
+          "event": "Published his autobiography, I Had a Hammer, with Lonnie Wheeler.",
+          "sources": [
+            1
+          ]
+        },
+        {
+          "year": "2002",
+          "event": "Received the Presidential Medal of Freedom from President George W. Bush.",
+          "sources": [
+            1
+          ]
+        },
+        {
+          "year": "2007",
+          "event": "Barry Bonds broke his career home run record in August.",
+          "sources": [
+            1
+          ]
+        },
+        {
+          "year": "2010",
+          "event": "Inducted as a Georgia Trustee.",
+          "sources": [
+            1
+          ]
+        },
+        {
+          "year": "2021",
+          "event": "Died January 22 in Atlanta; buried at South-View Cemetery after a January 27 funeral at Friendship Baptist Church.",
+          "sources": [
+            2,
+            3,
+            4
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "title": "Hank Aaron (1934-2021)",
+          "url": "https://www.georgiaencyclopedia.org/articles/sports-outdoor-recreation/hank-aaron-1934-2021/",
+          "publisher": "New Georgia Encyclopedia"
+        },
+        {
+          "title": "Aaron, Hank",
+          "url": "https://baseballhall.org/hall-of-famers/aaron-hank",
+          "publisher": "National Baseball Hall of Fame and Museum"
+        },
+        {
+          "title": "Hank Aaron obituary",
+          "url": "https://www.ajc.com/news/obituaries/aaron-hank/GX3PZQY26ZALHN4RUXWM3PDPZA",
+          "publisher": "Atlanta Journal-Constitution"
+        },
+        {
+          "title": "The Hammer makes one last trip to spot where he hit No. 715",
+          "url": "https://www.news4jax.com/sports/2021/01/27/the-hammer-makes-one-last-trip-to-spot-where-he-hit-no-715/",
+          "publisher": "Associated Press (via News4JAX)"
+        },
+        {
+          "title": "Baseball icon Hank Aaron dies at 86",
+          "url": "https://abc7ny.com/sports/baseball-icon-hank-aaron-dies-at-86/9905703/",
+          "publisher": "Associated Press (via ABC7 New York)"
+        }
+      ]
+    },
+    {
+      "id": "pf_bond",
+      "person_id": "person_0027",
+      "full_name": "Horace Julian Bond",
+      "also_known_as": [
+        "Julian Bond"
+      ],
+      "birth_year": 1940,
+      "death_year": 2015,
+      "lifespan": "January 14, 1940 – August 15, 2015",
+      "tagline": "SNCC co-founder, Georgia legislator, first SPLC president, and NAACP board chairman",
+      "occupations": [
+        "Civil rights activist",
+        "Politician",
+        "Professor",
+        "Writer",
+        "Television host"
+      ],
+      "burial": "Julian Bond is memorialized at South-View. Find a Grave lists a South-View plot (Section E4, Block 1NS-E-335-B), and Henderson's South-View book (2018) includes him. However, NPR/WVTF reported that his family scattered his ashes over the Gulf of Mexico in August 2015, and no source we found explains what is physically at South-View.",
+      "sections": [
+        {
+          "heading": "Early life and family",
+          "sources": [
+            1,
+            2
+          ],
+          "text": "Horace Julian Bond was born on January 14, 1940, in Nashville, Tennessee. His father, Horace Mann Bond, was the first president of Fort Valley State College (1939) and the first African American president of Lincoln University in Pennsylvania (1945). His mother, Julia (Washington) Bond, was a librarian. Julian Bond married Alice Clopton on July 28, 1961; they divorced on November 10, 1989. Their children were Phyllis Jane, Horace Mann II, Michael Julian, Jeffery (spelled Jeffrey Alvin by CNN), and Julia Louise. CNN also lists a daughter, Mia, with Deborah Kaye Moore. On March 17, 1990, Bond married Pamela Sue Horowitz, a lawyer at the Southern Poverty Law Center, and they remained married until his death."
+        },
+        {
+          "heading": "Education",
+          "sources": [
+            1,
+            2
+          ],
+          "text": "Julian Bond entered Morehouse College in Atlanta in 1957. At Morehouse he swam on the varsity swim team, helped found the literary magazine The Pegasus, and interned at Time magazine. He left Morehouse in 1961 to work in the civil rights movement, later returned, and earned a B.A. in English in 1971. Over his lifetime Julian Bond received 21 honorary degrees, and from 1992 to 2012 he himself taught civil rights history at the University of Virginia."
+        },
+        {
+          "heading": "Career and achievements",
+          "sources": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "text": "Julian Bond was elected to the Georgia House of Representatives in 1965, but the House refused to seat him because he endorsed a SNCC statement opposing the Vietnam War. In December 1966 the U.S. Supreme Court ruled the exclusion unconstitutional, and Bond was sworn in on January 9, 1967. He served in the House until 1974 and then in the Georgia Senate (1975–1986, according to CNN), where he was the first African American chair of the Fulton County Senate delegation and chaired the Consumer Affairs Committee. In 1986 he gave up his Senate seat to run for Congress and lost to his longtime friend John Lewis. Bond was the first president of the Southern Poverty Law Center (1971–1979) and stayed on its board for life. He was president of the NAACP Atlanta branch from 1974 to 1989 and chairman of the NAACP board from 1998, succeeding Myrlie Evers-Williams. He hosted America's Black Forum (1980–1997), taught civil rights history at the University of Virginia (1992–2012), was a visiting professor at American University, and wrote for the Nation, Life, and the New York Times."
+        },
+        {
+          "heading": "Civil rights and civic life",
+          "sources": [
+            1,
+            2,
+            3
+          ],
+          "text": "Julian Bond helped organize the Committee on Appeal for Human Rights at Morehouse in 1960, whose nonviolent protests helped integrate Atlanta theaters, lunch counters, and parks. In March 1960 he was arrested at a sit-in at the segregated Atlanta City Hall cafeteria. At Easter 1960 he helped form the Student Nonviolent Coordinating Committee (SNCC) in Raleigh, North Carolina, becoming its communications director and editor of the Student Voice. In 1961 he left Morehouse to work on the protest newspaper the Atlanta Inquirer. At the 1968 Democratic National Convention he helped a challenge delegation from Georgia unseat the regular Democrats. In 1971 he led a widely publicized voter registration drive in heavily Black areas of Georgia. Bond chaired the Southern Election Fund, which aided candidates in 11 Southern states, and on April 2, 1985, he was arrested at an anti-apartheid protest outside the South African Embassy."
+        },
+        {
+          "heading": "Legacy and honors",
+          "sources": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "text": "Julian Bond died on August 15, 2015, at age 75, while vacationing in Fort Walton Beach, Florida. The Catholic News Service obituary, citing his wife Pamela Horowitz, gave the cause as complications from vascular disease. Presidents Obama, Clinton, and Carter offered condolences. About 1,200 people attended a memorial at the Lincoln Theatre in Washington, D.C., and at the SPLC's Civil Rights Memorial in Montgomery, Alabama, mourners spread rose petals on the reflecting pool. Bond narrated the SPLC's Oscar-winning documentary A Time for Justice and the Oscar-nominated Shadow of Hate. He received the National Freedom Award in 2002 and 21 honorary degrees."
+        },
+        {
+          "heading": "Did you know?",
+          "sources": [
+            2,
+            4,
+            5,
+            6
+          ],
+          "text": "Julian Bond was the first African American to have his name placed in nomination for U.S. vice president, at the 1968 Democratic National Convention; he withdrew because at 28 he was below the constitutional minimum age of 35. Bond hosted Saturday Night Live on April 9, 1977. He was the Southern Poverty Law Center's first president. After his death in 2015, his family scattered his ashes over the Gulf of Mexico, according to NPR."
+        },
+        {
+          "heading": "Where sources disagree",
+          "sources": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            7,
+            8
+          ],
+          "text": "Julian Bond's birth date is January 14, 1940, per the New Georgia Encyclopedia and CNN; a Catholic News Service obituary says January 15. His death date is August 15, 2015, per NGE and CNN; the CNS text says August 16 in \"Walton Beach,\" though its own photo caption says August 15. Find a Grave gives his first election to the Georgia House as 1966, while NGE and CNS say 1965. CNN dates his SNCC communications director role to 1961–1966. For the Georgia Senate, CNN gives 1975–1986, NGE says he was elected in 1974 but calls the tenure \"about twenty years,\" and CNS says \"a dozen\" years. His NAACP chairmanship ended in 2010 per CNN and Find a Grave, consistent with SPLC's \"12 years\"; CNS says 2009. On burial, Find a Grave lists a South-View plot, but NPR/WVTF reported his ashes were scattered over the Gulf of Mexico, and the 2016 Georgia Historical Society South-View marker does not name him."
+        }
+      ],
+      "timeline": [
+        {
+          "year": "1940",
+          "event": "Born January 14 in Nashville, Tennessee.",
+          "sources": [
+            1,
+            2
+          ]
+        },
+        {
+          "year": "1957",
+          "event": "Entered Morehouse College in Atlanta.",
+          "sources": [
+            1
+          ]
+        },
+        {
+          "year": "1960",
+          "event": "Helped found SNCC in Raleigh, North Carolina, and became its communications director.",
+          "sources": [
+            1
+          ]
+        },
+        {
+          "year": "1965",
+          "event": "Elected to the Georgia House, which refused to seat him over his Vietnam War stance.",
+          "sources": [
+            1,
+            3
+          ]
+        },
+        {
+          "year": "1966",
+          "event": "U.S. Supreme Court ruled his exclusion from the Georgia House unconstitutional.",
+          "sources": [
+            1,
+            2
+          ]
+        },
+        {
+          "year": "1967",
+          "event": "Sworn into the Georgia House on January 9.",
+          "sources": [
+            1
+          ]
+        },
+        {
+          "year": "1968",
+          "event": "Became the first African American nominated for U.S. vice president; withdrew because he was 28.",
+          "sources": [
+            2
+          ]
+        },
+        {
+          "year": "1971",
+          "event": "Became the first president of the Southern Poverty Law Center.",
+          "sources": [
+            4,
+            3
+          ]
+        },
+        {
+          "year": "1975",
+          "event": "Began service in the Georgia Senate (to 1986, per CNN).",
+          "sources": [
+            2
+          ]
+        },
+        {
+          "year": "1977",
+          "event": "Hosted Saturday Night Live on April 9.",
+          "sources": [
+            2
+          ]
+        },
+        {
+          "year": "1986",
+          "event": "Gave up his Senate seat to run for Congress and lost to John Lewis.",
+          "sources": [
+            1,
+            3
+          ]
+        },
+        {
+          "year": "1992",
+          "event": "Began teaching civil rights history at the University of Virginia (to 2012).",
+          "sources": [
+            2
+          ]
+        },
+        {
+          "year": "1998",
+          "event": "Succeeded Myrlie Evers-Williams as NAACP board chairman.",
+          "sources": [
+            4,
+            1
+          ]
+        },
+        {
+          "year": "2015",
+          "event": "Died August 15 in Fort Walton Beach, Florida; his family scattered his ashes over the Gulf of Mexico.",
+          "sources": [
+            1,
+            2,
+            5
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "title": "Julian Bond (1940-2015)",
+          "url": "https://www.georgiaencyclopedia.org/articles/government-politics/julian-bond-1940-2015/",
+          "publisher": "New Georgia Encyclopedia"
+        },
+        {
+          "title": "Julian Bond Fast Facts",
+          "url": "https://krdo.com/news/national-world/cnn-national/2022/08/29/julian-bond-fast-facts/",
+          "publisher": "CNN (via KRDO)"
+        },
+        {
+          "title": "Julian Bond, 75, dies; was leading figure in civil rights movement",
+          "url": "https://catholicphilly.com/2015/08/uncategorized/julian-bond-75-dies-was-leading-figure-in-civil-rights-movement/",
+          "publisher": "Catholic News Service (CatholicPhilly)"
+        },
+        {
+          "title": "Julian Bond remembered for unwavering devotion to equality for all",
+          "url": "https://www.splcenter.org/resources/stories/julian-bond-remembered-unwavering-devotion-equality-all",
+          "publisher": "Southern Poverty Law Center"
+        },
+        {
+          "title": "Southern Poverty Law Center Remembers Civil Rights Leader Julian Bond",
+          "url": "https://www.wvtf.org/2015-08-23/southern-poverty-law-center-remembers-civil-rights-leader-julian-bond",
+          "publisher": "WVTF / NPR"
+        },
+        {
+          "title": "Southern Poverty Law Center Remembers Civil Rights Leader Julian Bond",
+          "url": "https://www.npr.org/2015/08/23/433981020/southern-poverty-law-center-remembers-civil-rights-leader-julian-bond",
+          "publisher": "NPR"
+        },
+        {
+          "title": "Julian Bond memorial #150809160",
+          "url": "https://www.findagrave.com/memorial/150809160",
+          "publisher": "Find a Grave"
+        },
+        {
+          "title": "South-View Cemetery historical marker",
+          "url": "https://georgiahistory.com/ghmi_marker_updated/south-view-cemetery/",
+          "publisher": "Georgia Historical Society"
+        }
+      ]
+    },
+    {
+      "id": "pf_hamilton",
+      "person_id": "person_0115",
+      "full_name": "Grace Towns Hamilton",
+      "also_known_as": [
+        "Grace Hamilton",
+        "Grace Towns"
+      ],
+      "birth_year": 1907,
+      "death_year": 1992,
+      "lifespan": "February 10, 1907 – June 17, 1992",
+      "tagline": "First Black woman in the Georgia General Assembly and architect of Atlanta's 1973 City Charter",
+      "occupations": [
+        "Politician",
+        "Civic leader",
+        "Social worker",
+        "Educator"
+      ],
+      "burial": "Grace Towns Hamilton is listed as buried at South-View in Henderson's South-View book (2018), and Wikipedia, citing Notable American Women (2005), says the same. We found no Find a Grave memorial, cemetery record or obituary confirming it, and the 2016 Georgia Historical Society marker at the cemetery does not name her.",
+      "sections": [
+        {
+          "heading": "Early life and family",
+          "sources": [
+            1,
+            4,
+            5
+          ],
+          "text": "Grace Towns Hamilton was born on February 10, 1907, in Atlanta, the oldest of four surviving children of Harriet McNair and George Alexander Towns, a professor of English and pedagogy at Atlanta University. In 1930 she married Henry Cooke Hamilton, son of Atlanta builder Alexander D. Hamilton. Their only child, Eleanor, was born in 1931 in Memphis. A Kiddle mirror of the South-View Cemetery article lists her father, George Alexander Towns, among South-View's notable burials, which makes a family plot plausible but unconfirmed."
+        },
+        {
+          "heading": "Education",
+          "sources": [
+            1
+          ],
+          "text": "Grace Towns Hamilton earned her undergraduate degree from Atlanta University in 1927 and an M.A. in psychology from Ohio State University in 1929. From 1927 to 1930 she taught psychology at Clark College and the Atlanta School of Social Work, and in Memphis during the 1930s she taught psychology at LeMoyne College. Her father, George Alexander Towns, was himself a professor of English and pedagogy at Atlanta University, the school where she earned her first degree."
+        },
+        {
+          "heading": "Career and achievements",
+          "sources": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "text": "Grace Towns Hamilton spent 1930 to 1941 in Memphis, where she taught at LeMoyne College, surveyed Black workers for the WPA, and developed interracial YWCA college programs. She returned to Atlanta in 1941 and in 1943 became executive director of the Atlanta Urban League, among the earliest women in such a post, pushing for education, health care, housing, and voting rights. She lost the post in 1961 after conflict with the National Urban League. In a June 1965 special election she was one of eight African Americans elected to the Georgia House of Representatives, the lower house of the General Assembly, becoming the first Black woman elected to the Georgia General Assembly; she was sworn in in January 1966. The research notes describe her service only in the House, not the Georgia Senate. She was the principal architect of the 1973 Atlanta City Charter, which made Black representation on the City Council proportional to population. She lost her reelection bid to Mable Thomas in September 1984, and her term ended in January 1985. From January 1985 to January 1987 she advised the U.S. Civil Rights Commission."
+        },
+        {
+          "heading": "Civil rights and civic life",
+          "sources": [
+            1,
+            2
+          ],
+          "text": "Grace Towns Hamilton's 1965 election made her part of the first group of Black members of the Georgia House of Representatives since Reconstruction. In 1964 Mayor Ivan Allen Jr. appointed her to Atlanta's Fund Appeals Board, and in 1966 President Lyndon Johnson appointed her to the Committee on Recreation and Natural Beauty. Andrew Young credited Hamilton with making possible his 1972 election as the first Black congressman from Atlanta's Fifth District; Georgia Women of Achievement adds that he was the first Black Georgian elected to Congress since 1870. In the reapportionment fight after the 1980 census, Hamilton sided with white leadership over the shape of the Fifth District, a stance that angered many in Atlanta's Black community."
+        },
+        {
+          "heading": "Legacy and honors",
+          "sources": [
+            1,
+            2,
+            3,
+            6
+          ],
+          "text": "Grace Towns Hamilton died on June 17, 1992. The Atlanta Journal ran a front-page obituary calling her a \"great leader and public servant.\" She was inducted into Georgia Women of Achievement in 2006. The Georgia Legislative Black Caucus's Grace Towns Hamilton Leadership Award is named for her, as is Grady Memorial Hospital's Women's and Infants' Pavilion. Her papers are held at the Robert W. Woodruff Library of the Atlanta University Center, and a biography, Grace Towns Hamilton and the Politics of Southern Change by Lorraine Nelson Spritzer and Jean B. Bergmark, was published by the University of Georgia Press."
+        },
+        {
+          "heading": "Did you know?",
+          "sources": [
+            1,
+            2,
+            3
+          ],
+          "text": "Grace Towns Hamilton was the first African American woman in the Deep South elected to a state legislature, according to UGA Press. She was the principal architect of Atlanta's 1973 City Charter. She led the Atlanta Urban League from 1943 to 1961. Andrew Young credited her with making his 1972 election to Congress possible. Grady Memorial Hospital's Women's and Infants' Pavilion bears her name."
+        },
+        {
+          "heading": "Where sources disagree",
+          "sources": [
+            1,
+            4,
+            5,
+            7
+          ],
+          "text": "Henderson's South-View book (2018) says Grace Towns Hamilton served in the Georgia Senate, but the New Georgia Encyclopedia says her 1965 election made her one of the first Black members of the lower house, the Georgia House of Representatives, since Reconstruction. Sources differ on when Grace Towns Hamilton's legislative service ended. The New Georgia Encyclopedia gives 1965–1985 and calls it \"eighteen years\"; Wikipedia gives her term as ending January 14, 1985; and a search summary (not directly verified) attributed 1965–1984 to UGA Press. She lost her reelection bid in September 1984, so the 1984 and 1985 dates may reflect the election and the end of her term. Her burial is also uncertain: Wikipedia and a Kiddle mirror place her at South-View Cemetery, but the 2016 Georgia Historical Society South-View marker does not name her and no cemetery record was found."
+        }
+      ],
+      "timeline": [
+        {
+          "year": "1907",
+          "event": "Born February 10 in Atlanta.",
+          "sources": [
+            1,
+            2
+          ]
+        },
+        {
+          "year": "1927",
+          "event": "Graduated from Atlanta University.",
+          "sources": [
+            1
+          ]
+        },
+        {
+          "year": "1929",
+          "event": "Earned an M.A. in psychology from Ohio State University.",
+          "sources": [
+            1
+          ]
+        },
+        {
+          "year": "1930",
+          "event": "Married Henry Cooke Hamilton and moved to Memphis.",
+          "sources": [
+            1
+          ]
+        },
+        {
+          "year": "1943",
+          "event": "Became executive director of the Atlanta Urban League.",
+          "sources": [
+            1,
+            2
+          ]
+        },
+        {
+          "year": "1961",
+          "event": "Left the Atlanta Urban League after conflict with the National Urban League.",
+          "sources": [
+            1
+          ]
+        },
+        {
+          "year": "1965",
+          "event": "Won a June special election to the Georgia House, the first Black woman elected to the General Assembly.",
+          "sources": [
+            1,
+            3
+          ]
+        },
+        {
+          "year": "1966",
+          "event": "Sworn into the Georgia House; appointed by President Johnson to the Committee on Recreation and Natural Beauty.",
+          "sources": [
+            2
+          ]
+        },
+        {
+          "year": "1973",
+          "event": "Served as principal architect of the Atlanta City Charter.",
+          "sources": [
+            1,
+            2
+          ]
+        },
+        {
+          "year": "1984",
+          "event": "Lost her reelection bid to Mable Thomas in September.",
+          "sources": [
+            1
+          ]
+        },
+        {
+          "year": "1985",
+          "event": "Began two years as an advisor to the U.S. Civil Rights Commission.",
+          "sources": [
+            1
+          ]
+        },
+        {
+          "year": "1992",
+          "event": "Died June 17.",
+          "sources": [
+            1,
+            2
+          ]
+        },
+        {
+          "year": "2006",
+          "event": "Inducted into Georgia Women of Achievement.",
+          "sources": [
+            1,
+            2
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "title": "Grace Towns Hamilton (1907-1992)",
+          "url": "https://www.georgiaencyclopedia.org/articles/government-politics/grace-towns-hamilton-1907-1992/",
+          "publisher": "New Georgia Encyclopedia"
+        },
+        {
+          "title": "Grace Towns Hamilton",
+          "url": "https://www.georgiawomen.org/grace-towns-hamilton",
+          "publisher": "Georgia Women of Achievement"
+        },
+        {
+          "title": "Grace Towns Hamilton and the Politics of Southern Change",
+          "url": "https://ugapress.org/book/9780820333878/grace-towns-hamilton-and-the-politics-of-southern-change/",
+          "publisher": "University of Georgia Press"
+        },
+        {
+          "title": "Grace Towns Hamilton",
+          "url": "https://en.wikipedia.org/wiki/Grace_Towns_Hamilton",
+          "publisher": "Wikipedia"
+        },
+        {
+          "title": "South-View Cemetery",
+          "url": "https://kids.kiddle.co/South-View_Cemetery",
+          "publisher": "Kiddle"
+        },
+        {
+          "title": "Grace Towns Hamilton papers finding aid",
+          "url": "http://hdl.handle.net/20.500.12322/fa:152",
+          "publisher": "Robert W. Woodruff Library, Atlanta University Center"
+        },
+        {
+          "title": "South-View Cemetery historical marker",
+          "url": "https://georgiahistory.com/ghmi_marker_updated/south-view-cemetery/",
+          "publisher": "Georgia Historical Society"
+        }
+      ]
+    },
+    {
+      "id": "pf_turner",
+      "person_id": "person_0259",
+      "full_name": "Henry McNeal Turner",
+      "also_known_as": [
+        "Bishop Henry McNeal Turner",
+        "Bishop Turner"
+      ],
+      "birth_year": 1834,
+      "death_year": 1915,
+      "lifespan": "February 1, 1834 – May 8, 1915",
+      "tagline": "AME bishop, Civil War chaplain, Reconstruction legislator, and advocate of emigration to Africa",
+      "occupations": [
+        "Bishop",
+        "Minister",
+        "Army chaplain",
+        "Politician",
+        "Editor"
+      ],
+      "burial": "Henry McNeal Turner is buried at South-View Cemetery: the Georgia Historical Society's 2016 South-View marker names him among the cemetery's notable burials, and Find a Grave memorial #14775222 places him there (the New Georgia Encyclopedia says only that he was buried in Atlanta).",
+      "sections": [
+        {
+          "heading": "Early life and family",
+          "sources": [
+            1,
+            2,
+            4
+          ],
+          "text": "Henry McNeal Turner was born free in 1834 at Newberry Courthouse, South Carolina, according to the New Georgia Encyclopedia; Find a Grave and Mother Bethel AME give the date as February 1, 1834. He was never enslaved. His parents were Sarah Greer and Hardy Turner. His paternal grandmother was a white plantation owner, and family legend says his maternal grandfather, David Greer, arrived on a slave ship. Turner married four times: Eliza Peacher (married 1856, died 1889), daughter of a wealthy Black builder in Columbia, South Carolina, with whom he had 14 children, four of whom survived to adulthood; Martha Elizabeth DeWitt (1893); Harriet A. Wayman (1900); and Laura Pearl Lemon (1907)."
+        },
+        {
+          "heading": "Education",
+          "sources": [
+            1
+          ],
+          "text": "Henry McNeal Turner had no formal degrees described by the New Georgia Encyclopedia. Around age 15 he worked as a janitor at a law firm in Abbeville, South Carolina, and the lawyers there helped educate him. He was licensed to preach in 1853 and learned much of his craft as an itinerant evangelist traveling across the South, preaching in Macon, Athens, Atlanta, and New Orleans before joining the AME Church in St. Louis in 1858."
+        },
+        {
+          "heading": "Career and achievements",
+          "sources": [
+            1,
+            2
+          ],
+          "text": "Henry McNeal Turner was licensed to preach in 1853 and worked as an itinerant evangelist in Macon, Athens, Atlanta, New Orleans, and elsewhere. In 1858 he moved to St. Louis and joined the African Methodist Episcopal (AME) Church, later holding pastorates in Baltimore and Washington, D.C., where he befriended Charles Sumner and Thaddeus Stevens. In 1863 he helped organize the 1st Regiment, U.S. Colored Troops, in his churchyard and was mustered in as its chaplain, and he is widely recognized as the first Black chaplain in the U.S. Army. In 1865 he resigned a reassigned chaplaincy in Atlanta and began organizing AME churches across Georgia. He became manager of the AME publishing house in 1876, and in 1880 he was elected the 12th bishop of the AME Church, the first Southern bishop elected. In 1885 he became the first AME bishop to ordain a woman, Sarah Ann Hughes, as deacon. He wrote The Genius and Theory of Methodist Polity (1885) and edited The Voice of Missions (1893–1900) and The Voice of the People (1901–1904)."
+        },
+        {
+          "heading": "Civil rights and civic life",
+          "sources": [
+            1
+          ],
+          "text": "Henry McNeal Turner helped organize Georgia's Republican Party, served in the state constitutional convention, and was elected to the Georgia House from Macon, which the New Georgia Encyclopedia dates to 1867. In 1868 the legislature expelled its Black members; Turner spoke against the expulsion without success and afterward received Ku Klux Klan threats. In 1869 President Grant appointed him postmaster of Macon, but he resigned weeks later amid allegations. At Congress's urging he was reseated in 1870, then lost a contested reelection months later, and afterward worked at the Savannah Custom House and pastored St. Philip's AME Church. Turner was a leading advocate of emigration to Africa: in the 1890s he organized the International Migration Society with white Alabama businessmen, and in 1895 and 1896 two ships carried 500 or more emigrants to Liberia, though some later returned. Between 1891 and 1898 he made four trips to Africa, organized AME conferences in Liberia and Sierra Leone, helped merge the AME Church with the Ethiopian Church in South Africa, and sent missionaries to Cuba and Mexico."
+        },
+        {
+          "heading": "Legacy and honors",
+          "sources": [
+            1,
+            3,
+            4
+          ],
+          "text": "Henry McNeal Turner died on May 8, 1915, in Windsor, Ontario, Canada, while traveling on church business, and was buried in Atlanta at South-View Cemetery. His portrait hangs in the Georgia State Capitol. The Georgia Historical Society's South-View Cemetery marker, erected in 2016, names \"Bishop Henry McNeal Turner, Reconstruction-era state legislator and African Methodist Episcopal Church organizer\" among the cemetery's notable burials, alongside Alonzo Herndon and Rev. and Mrs. Martin Luther King Sr."
+        },
+        {
+          "heading": "Did you know?",
+          "sources": [
+            1,
+            2,
+            3
+          ],
+          "text": "Henry McNeal Turner is widely recognized as the first Black chaplain in the U.S. Army, serving the 1st U.S. Colored Troops from 1863. He was expelled from the Georgia legislature with the other Black members in 1868 and reseated in 1870. As the AME Church's 12th bishop, he was the first to ordain a woman as deacon, in 1885. He championed emigration to Liberia, and ships sailed under his International Migration Society in 1895 and 1896. He died in Canada in 1915 and is named on South-View's 2016 state historical marker."
+        },
+        {
+          "heading": "Where sources disagree",
+          "sources": [
+            1,
+            2,
+            4
+          ],
+          "text": "Henry McNeal Turner's birthplace is Newberry Courthouse, South Carolina, per the New Georgia Encyclopedia and Find a Grave (Newberry), but Mother Bethel AME says \"near Abbeville, South Carolina\"; NGE gives only the year 1834, while Find a Grave and Mother Bethel give February 1. NGE dates his election to the Georgia House to 1867, while Mother Bethel and Find a Grave say 1868. Accounts of how many Black legislators were expelled with him in 1868 are inconsistent: Find a Grave gives both \"twenty-five\" and \"26 other,\" and Mother Bethel's figures appear garbled, so no number is given here. His role at Morris Brown College in Atlanta is unresolved: Mother Bethel says he served 12 years as chancellor, and Find a Grave says he helped found the college. Mother Bethel also associates him with the declaration \"God is a Negro,\" placing it at \"the first Black Baptist convention\" with no date; that setting is doubtful for an AME bishop and has not been verified."
+        }
+      ],
+      "timeline": [
+        {
+          "year": "1834",
+          "event": "Born free at Newberry Courthouse, South Carolina.",
+          "sources": [
+            1
+          ]
+        },
+        {
+          "year": "1853",
+          "event": "Licensed to preach; began work as an itinerant evangelist across the South.",
+          "sources": [
+            1
+          ]
+        },
+        {
+          "year": "1856",
+          "event": "Married Eliza Peacher.",
+          "sources": [
+            1
+          ]
+        },
+        {
+          "year": "1858",
+          "event": "Moved to St. Louis and joined the AME Church.",
+          "sources": [
+            1
+          ]
+        },
+        {
+          "year": "1863",
+          "event": "Mustered in as chaplain of the 1st Regiment, U.S. Colored Troops.",
+          "sources": [
+            1,
+            2
+          ]
+        },
+        {
+          "year": "1865",
+          "event": "Began organizing AME churches across Georgia.",
+          "sources": [
+            1
+          ]
+        },
+        {
+          "year": "1867",
+          "event": "Served in Georgia's constitutional convention and was elected to the Georgia House from Macon.",
+          "sources": [
+            1
+          ]
+        },
+        {
+          "year": "1868",
+          "event": "Expelled from the legislature with the other Black members.",
+          "sources": [
+            1
+          ]
+        },
+        {
+          "year": "1870",
+          "event": "Reseated in the legislature at Congress's urging.",
+          "sources": [
+            1
+          ]
+        },
+        {
+          "year": "1876",
+          "event": "Elected manager of the AME publishing house.",
+          "sources": [
+            1
+          ]
+        },
+        {
+          "year": "1880",
+          "event": "Elected the 12th bishop of the AME Church, the first Southern bishop elected.",
+          "sources": [
+            1,
+            2
+          ]
+        },
+        {
+          "year": "1885",
+          "event": "Ordained Sarah Ann Hughes as deacon, the first woman ordained by an AME bishop.",
+          "sources": [
+            1
+          ]
+        },
+        {
+          "year": "1891",
+          "event": "Made the first of four trips to Africa (through 1898).",
+          "sources": [
+            1
+          ]
+        },
+        {
+          "year": "1895",
+          "event": "First International Migration Society ship carried emigrants to Liberia.",
+          "sources": [
+            1
+          ]
+        },
+        {
+          "year": "1915",
+          "event": "Died May 8 in Windsor, Ontario; buried at South-View Cemetery.",
+          "sources": [
+            1,
+            3,
+            4
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "title": "Henry McNeal Turner (1834-1915)",
+          "url": "https://www.georgiaencyclopedia.org/articles/history-archaeology/henry-mcneal-turner-1834-1915/",
+          "publisher": "New Georgia Encyclopedia"
+        },
+        {
+          "title": "Henry McNeal Turner",
+          "url": "https://motherbethel.org/henry-mcneal-turner/",
+          "publisher": "Mother Bethel AME Church"
+        },
+        {
+          "title": "South-View Cemetery historical marker",
+          "url": "https://georgiahistory.com/ghmi_marker_updated/south-view-cemetery/",
+          "publisher": "Georgia Historical Society"
+        },
+        {
+          "title": "Henry McNeal Turner memorial #14775222",
+          "url": "https://www.findagrave.com/memorial/14775222",
+          "publisher": "Find a Grave"
+        }
+      ]
+    },
+    {
+      "id": "pf_herndon",
+      "person_id": "person_0134",
+      "full_name": "Alonzo Franklin Herndon",
+      "also_known_as": [
+        "Alonzo Herndon"
+      ],
+      "birth_year": 1858,
+      "death_year": 1927,
+      "lifespan": "June 26, 1858 – July 21, 1927",
+      "tagline": "Born enslaved, the barber who founded Atlanta Life Insurance became Atlanta's wealthiest Black citizen",
+      "occupations": [
+        "Barber",
+        "Entrepreneur",
+        "Insurance executive",
+        "Philanthropist"
+      ],
+      "burial": "Buried at South-View Cemetery. Reported by the Georgia Historical Society marker at the cemetery (erected 2016), which names \"Alonzo Herndon, founder of the Atlanta Life Insurance Company\" among its notable burials; Wikipedia's South-View list also includes him and his first wife, Adrienne McNeil Herndon.",
+      "sections": [
+        {
+          "heading": "Early life and family",
+          "text": "Alonzo Franklin Herndon was born enslaved on June 26, 1858, in Walton County, Georgia, and grew up on a farm in Social Circle, about 40 miles east of Atlanta. His father, Frank Herndon, was a white man who enslaved him; his mother, Sophenie, was an enslaved woman. He had a younger brother, Thomas, known as Tom, and his maternal grandparents lived with the family after emancipation. After emancipation his father sent the family away, and at about age seven Alonzo, his mother, his brother and his grandparents were homeless and destitute. In 1893 Herndon married Adrienne Elizabeth McNeil, a professor at Atlanta University who had studied dramatic arts in Boston and New York and received the Belasco Gold Medal in 1908. Adrienne died in 1910 and, according to Wikipedia's South-View list, is also buried at South-View. Their only child, Norris Herndon, succeeded his father as chief executive of Atlanta Life and ran the company until his death in 1955. Herndon later married Jessie Gillespie of Chicago. After his death she joined the Atlanta Life board, and she and his stepson took control of the company as major stockholders.",
+          "sources": [
+            1,
+            3,
+            4
+          ]
+        },
+        {
+          "heading": "Education",
+          "text": "Alonzo Herndon had only about one year of formal schooling before he left Social Circle, Georgia, in 1878. As a boy in the 1870s he worked instead, peddling peanuts, homemade molasses and axle grease to save money. According to the New Georgia Encyclopedia, Herndon overcame illiteracy during his life. His practical education came through work: after leaving home he labored as a farmhand in Senoia, in Coweta County, where he began learning the barbering trade that would become the foundation of his later business success and of the insurance company he founded in 1905.",
+          "sources": [
+            1
+          ]
+        },
+        {
+          "heading": "Career and achievements",
+          "text": "Alonzo Herndon left Social Circle on foot in 1878 with $11, worked as a farmhand in Senoia and learned barbering. He opened his first barbershop in Jonesboro, in Clayton County, and stayed about five years. In early 1883 he moved to Atlanta to work in William Dougherty Hutchins's barbershop on Marietta Street and bought a half interest in it about six months later. By 1904 he owned three Atlanta barbershops; the flagship at 66 Peachtree Street was advertised as the largest and best in the region. Secondary sources call that shop the \"Crystal Palace\" and describe gold fixtures, marble floors and crystal chandeliers, with Black barbers serving an exclusively white clientele. In 1905 Herndon bought a failing mutual aid association and incorporated it as the Atlanta Mutual Insurance Association, serving as president and chief stockholder. Its assets grew from $5,000 in 1905 to more than $400,000 by 1922, when it was reorganized as the Atlanta Life Insurance Company and gained legal reserve status, which only four other Black insurers then held. In the 1920s Atlanta Life expanded into Florida, Kansas, Kentucky, Missouri, Tennessee and Texas, and Herndon rescued failing Black businesses by reinsuring their policyholders. He owned more than 100 houses, commercial property on Auburn Avenue and an estate in Tavares, Florida.",
+          "sources": [
+            1,
+            5,
+            6
+          ]
+        },
+        {
+          "heading": "Civil rights and civic life",
+          "text": "Alonzo Herndon took part in two of the most important Black organizing efforts of the early twentieth century. In 1900 he was among the Atlanta delegates at the founding meeting of Booker T. Washington's National Negro Business League in Boston, and in 1905 he was one of the 29 men at the founding meeting of W. E. B. Du Bois's Niagara Movement. Herndon also experienced racial violence directly: in September 1906, during the Atlanta race massacre, a mob smashed the windows of his barbershop while he was at home, and Black barbers in a shop across the street were killed. Herndon supported many Atlanta institutions, including the YMCA, Atlanta University, the Leonard Street, Carrie Steele and Diana Pace orphanages, the Herndon Day Nursery, First Congregational Church, Atlanta State Savings Bank and the Southview Cemetery Association, the organization behind the cemetery where he is buried.",
+          "sources": [
+            1
+          ]
+        },
+        {
+          "heading": "Legacy and honors",
+          "text": "Alonzo Herndon died in Atlanta on July 21, 1927, a few weeks after his 69th birthday. His real estate was assessed at nearly $325,000, and the New Georgia Encyclopedia describes him as Atlanta's wealthiest Black citizen at his death. Atlanta Life survived into the 21st century and is regularly ranked by Black Enterprise among the top Black financial companies. The Herndon Home at 587 University Place NW, built in 1910 in the Classical Revival style with Beaux Arts influences, has much of its design credited to Adrienne Herndon, and African American craftsmen did almost all of the work except the electrical and plumbing. It was named an Atlanta Landmark Building on October 14, 1989, and was listed on the National Register of Historic Places and designated a National Historic Landmark on February 16, 2000. The Alonzo F. and Norris B. Herndon Foundation has run it as a museum since 1983 and supports entrepreneurship, including the \"Game Changer\" program for 11th and 12th graders that began in 2013. In 2016 a Georgia Historical Society marker at South-View Cemetery named Herndon among its notable burials.",
+          "sources": [
+            1,
+            4,
+            5,
+            2
+          ]
+        },
+        {
+          "heading": "Did you know?",
+          "text": "Alonzo Herndon left home at about age 20 with just $11 and became Atlanta's wealthiest Black citizen. A mob attacked his barbershop during the 1906 Atlanta race massacre. Herndon attended the founding meetings of both Booker T. Washington's National Negro Business League in 1900 and W. E. B. Du Bois's Niagara Movement in 1905. His 1905 insurance association grew from $5,000 to more than $400,000 in assets by 1922 and became Atlanta Life. His Herndon Home, built in 1910, is a National Historic Landmark and museum, and his first wife Adrienne, credited with much of its design, is also buried at South-View.",
+          "sources": [
+            1,
+            4,
+            3
+          ]
+        },
+        {
+          "heading": "Where sources disagree",
+          "text": "Sources describe Alonzo Herndon's wealth differently. The New Georgia Encyclopedia says he was Atlanta's wealthiest Black citizen at his death but does not call him a millionaire. Rough Draft Atlanta calls him Atlanta's first Black millionaire, and Wikipedia's South-View Cemetery list describes him as one of the first Black millionaires; these claims come from secondary sources and are not confirmed by the encyclopedia. Sources also differ on his famous barbershop. The New Georgia Encyclopedia places his flagship shop at 66 Peachtree Street by 1904 but never uses the name Crystal Palace. Secondary sources, including Edwardian Promenade and Rough Draft Atlanta, use that name, but they disagree on when the shop opened as the Crystal Palace: one gives 1902, while another says the Herndon barbershop had become the Crystal Palace by spring 1913. It has not been confirmed which source gives which date, so no opening year is stated here.",
+          "sources": [
+            1,
+            5,
+            3,
+            6
+          ]
+        }
+      ],
+      "timeline": [
+        {
+          "year": "1858",
+          "event": "Born enslaved on June 26 in Walton County, Georgia.",
+          "sources": [
+            1
+          ]
+        },
+        {
+          "year": "1878",
+          "event": "Left Social Circle on foot with $11 and began learning barbering in Senoia.",
+          "sources": [
+            1
+          ]
+        },
+        {
+          "year": "1883",
+          "event": "Moved to Atlanta to work in William Dougherty Hutchins's Marietta Street barbershop, soon buying a half interest.",
+          "sources": [
+            1
+          ]
+        },
+        {
+          "year": "1893",
+          "event": "Married Adrienne Elizabeth McNeil, a professor at Atlanta University.",
+          "sources": [
+            1
+          ]
+        },
+        {
+          "year": "1900",
+          "event": "Attended the founding meeting of the National Negro Business League in Boston as an Atlanta delegate.",
+          "sources": [
+            1
+          ]
+        },
+        {
+          "year": "1904",
+          "event": "Owned three Atlanta barbershops, with the flagship at 66 Peachtree Street.",
+          "sources": [
+            1
+          ]
+        },
+        {
+          "year": "1905",
+          "event": "Founded the Atlanta Mutual Insurance Association and attended the founding meeting of the Niagara Movement.",
+          "sources": [
+            1
+          ]
+        },
+        {
+          "year": "1906",
+          "event": "A mob smashed the windows of his barbershop during the Atlanta race massacre.",
+          "sources": [
+            1
+          ]
+        },
+        {
+          "year": "1910",
+          "event": "The Herndon Home was built at 587 University Place NW; Adrienne Herndon died the same year.",
+          "sources": [
+            4,
+            1
+          ]
+        },
+        {
+          "year": "1922",
+          "event": "The company was reorganized as the Atlanta Life Insurance Company with legal reserve status.",
+          "sources": [
+            1
+          ]
+        },
+        {
+          "year": "1927",
+          "event": "Died in Atlanta on July 21 as the city's wealthiest Black citizen.",
+          "sources": [
+            1
+          ]
+        },
+        {
+          "year": "1983",
+          "event": "The Herndon Foundation began operating the Herndon Home as a museum.",
+          "sources": [
+            4
+          ]
+        },
+        {
+          "year": "2000",
+          "event": "The Herndon Home was designated a National Historic Landmark.",
+          "sources": [
+            4
+          ]
+        },
+        {
+          "year": "2016",
+          "event": "A Georgia Historical Society marker at South-View Cemetery named him among its notable burials.",
+          "sources": [
+            2
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "title": "Alonzo Herndon (1858-1927)",
+          "url": "https://www.georgiaencyclopedia.org/articles/business-economy/alonzo-herndon-1858-1927/",
+          "publisher": "New Georgia Encyclopedia"
+        },
+        {
+          "title": "South-View Cemetery historical marker",
+          "url": "https://www.georgiahistory.com/?p=38883",
+          "publisher": "Georgia Historical Society"
+        },
+        {
+          "title": "South-View Cemetery",
+          "url": "https://en.wikipedia.org/wiki/South-View_Cemetery",
+          "publisher": "Wikipedia"
+        },
+        {
+          "title": "Herndon Home",
+          "url": "https://en.wikipedia.org/wiki/Herndon_Home",
+          "publisher": "Wikipedia"
+        },
+        {
+          "title": "Perspectives in Architecture: A historical gem in the community",
+          "url": "https://roughdraftatlanta.com/2018/08/01/perspectives-in-architecture-a-historical-gem-in-the-community/",
+          "publisher": "Rough Draft Atlanta"
+        },
+        {
+          "title": "Alonzo Herndon and his Crystal Palace",
+          "url": "https://edwardianpromenade.com/african-american/alonzo-herndon-and-his-crystal-palace",
+          "publisher": "Edwardian Promenade"
+        }
+      ]
+    },
+    {
+      "id": "pf_russell",
+      "person_id": "person_0231",
+      "full_name": "Herman Jerome Russell",
+      "also_known_as": [
+        "Herman J. Russell",
+        "Herman Russell"
+      ],
+      "birth_year": 1930,
+      "death_year": 2014,
+      "lifespan": "December 23, 1930 – November 15, 2014",
+      "tagline": "Built H.J. Russell & Company into a top minority-owned builder and quietly funded the civil rights movement",
+      "occupations": [
+        "Entrepreneur",
+        "Real estate developer",
+        "Construction executive",
+        "Philanthropist"
+      ],
+      "burial": "Buried at South-View Cemetery. Reported by CBS News Atlanta (February 2, 2026), which notes \"the burial site of Herman J. Russell, a major Atlanta developer\" there, and by Wikipedia's South-View list, which cites Henderson's 2018 book on the cemetery.",
+      "sections": [
+        {
+          "heading": "Early life and family",
+          "text": "Herman Jerome Russell was born on December 23, 1930, in Atlanta, the youngest of eight children of Maggie Googson and Rogers Russell, and grew up in the Summerhill neighborhood. As a child he overcame a severe speech impediment. In 1956 Russell married Otelia Hackney, a Clark College graduate from Union Point, Georgia, who died in 2006. Their children are Donata, H. Jerome and Michael; H. Jerome Russell is president of H.J. Russell & Company as of 2026. Russell later married Sylvia Anderson, described as a president at AT&T. In 2015, after his death, Joycelyn Darby Alston claimed to be his daughter, and DNA tests confirmed it; she declined a settlement, legal proceedings followed, and the family has not acknowledged her as an heir. Herman Russell died in Atlanta on November 15, 2014, at age 83, after what the Atlanta Black Star called a brief illness.",
+          "sources": [
+            1,
+            2,
+            5
+          ]
+        },
+        {
+          "heading": "Education",
+          "text": "Herman J. Russell attended David T. Howard High School in Atlanta. While still a high school sophomore he bought his first piece of property, which he later developed to help pay for college. Russell went on to earn a degree in building construction from Tuskegee Institute, now Tuskegee University; the sources consulted do not give his graduation year. That construction training underpinned his later career, in which he took over his father's plastering business and built one of the largest minority-owned real estate and construction firms in the United States.",
+          "sources": [
+            1
+          ]
+        },
+        {
+          "heading": "Career and achievements",
+          "text": "Herman J. Russell began his career in Atlanta in 1953, according to the New Georgia Encyclopedia, inherited his father's Rogers Russell Plastering Company in 1957, and had formed H.J. Russell Construction Company by the end of the 1960s. During the 1960s and 1970s he expanded into H.J. Russell and Company, H.J. Russell Plastering Company, Paradise Management Inc., DDR International and Southeast Land Development Company, later adding communications, concessions and sports franchises. In 1994 Russell reorganized his construction businesses under H.J. Russell and Company, with an estimated $150 million in annual sales and offices from Miami to New York. In the early 2000s the company was described as the largest minority business enterprise real estate firm in the United States. His firm worked on Hartsfield-Jackson Atlanta International Airport, the Georgia Dome, Philips Arena (now State Farm Arena) and Turner Field, and was involved in building the new Falcons stadium, now Mercedes-Benz Stadium. The Atlanta Tribune also credits the company with work on the National Center for Civil and Human Rights and the Smithsonian National Museum of African American History and Culture. In 2004 Russell stepped down as CEO, handing leadership to his two sons and daughter, and remained board chairman. In 2014 he published his autobiography, Building Atlanta: How I Broke through Segregation to Launch a Business Empire.",
+          "sources": [
+            1,
+            2,
+            5
+          ]
+        },
+        {
+          "heading": "Civil rights and civic life",
+          "text": "Herman J. Russell was a friend of Martin Luther King Jr. and gave behind-the-scenes counsel and funding to the civil rights movement. According to the Atlanta Black Star, King relaxed at Russell's home and swam in his indoor pool, and Russell financed \"a great portion\" of the movement. In the early 1960s Russell became the first Black member of the Atlanta Chamber of Commerce, and he later became its second Black president. In 1973 he helped Maynard Jackson win election as Atlanta's first Black mayor. Russell served on the boards of Citizens Trust Bank, Central Atlanta Progress, the Butler Street YMCA, the Atlanta NAACP, Allen Temple AME Church and the Business Council of Georgia.",
+          "sources": [
+            1,
+            2
+          ]
+        },
+        {
+          "heading": "Legacy and honors",
+          "text": "Herman J. Russell received the Horatio Alger Award in 1991. In 1999 he pledged $4 million for entrepreneurship education at Clark Atlanta University, Georgia State University, Morehouse College and Tuskegee. In 2009 the Russell family gave $1 million to Children's Healthcare of Atlanta at Hughes Spalding, whose lobby is named for Otelia and Herman Russell. He was named a Georgia Trustee in 2013 and received the Terrie M. Williams Inspiration Award in August 2014. Georgia State's Herman J. Russell Sr. International Center for Entrepreneurship bears his name. In 2019 the Russell Innovation Center for Entrepreneurs (RICE) opened in the renovated former company headquarters in Castleberry Hill, a building donated by the family; as of 2026 it reports serving 500 business leaders, helping create 2,500 jobs and generating more than $547 million in local economic activity. On April 29, 2026, the Georgia Historical Society unveiled a marker at the original headquarters at 504 Fair Street. Mayor Kasim Reed said in 2014, \"He is one of the best men our city has ever produced.\"",
+          "sources": [
+            1,
+            5,
+            6,
+            2
+          ]
+        },
+        {
+          "heading": "Did you know?",
+          "text": "Herman J. Russell bought his first piece of property while still a high school sophomore. His firm helped build Hartsfield-Jackson airport, the Georgia Dome, Turner Field and Philips Arena. Martin Luther King Jr. relaxed at Russell's home and swam in his indoor pool, and Russell quietly helped fund the movement. He was the first Black member of the Atlanta Chamber of Commerce, in the early 1960s. His former headquarters is now the Russell Innovation Center for Entrepreneurs, opened in 2019, and received a Georgia Historical Society marker in 2026.",
+          "sources": [
+            1,
+            2,
+            5
+          ]
+        },
+        {
+          "heading": "Where sources disagree",
+          "text": "Sources give different founding dates for Herman J. Russell's company. The Atlanta Black Star says the company was founded in 1952. The Atlanta Tribune quotes his son H. Jerome Russell saying his father was 22 when he bought the land for the original building, which would be about 1952 or 1953, and describes the firm as nearly 75 years old in 2026. The New Georgia Encyclopedia says Russell began his career in Atlanta in 1953, inherited his father's Rogers Russell Plastering Company in 1957, and had formed H.J. Russell Construction Company by the end of the 1960s. These dates likely reflect different milestones, such as his early plastering and real estate work, inheriting his father's firm, and incorporating the general contracting company, rather than a single founding year.",
+          "sources": [
+            2,
+            5,
+            1
+          ]
+        }
+      ],
+      "timeline": [
+        {
+          "year": "1930",
+          "event": "Born December 23 in Atlanta and raised in the Summerhill neighborhood.",
+          "sources": [
+            1
+          ]
+        },
+        {
+          "year": "1953",
+          "event": "Began his career in Atlanta (the Atlanta Black Star dates the company's founding to 1952).",
+          "sources": [
+            1,
+            2
+          ]
+        },
+        {
+          "year": "1956",
+          "event": "Married Otelia Hackney, a Clark College graduate.",
+          "sources": [
+            1
+          ]
+        },
+        {
+          "year": "1957",
+          "event": "Inherited his father's Rogers Russell Plastering Company.",
+          "sources": [
+            1
+          ]
+        },
+        {
+          "year": "1960s",
+          "event": "Became the first Black member of the Atlanta Chamber of Commerce and formed H.J. Russell Construction Company.",
+          "sources": [
+            1
+          ]
+        },
+        {
+          "year": "1973",
+          "event": "Helped Maynard Jackson win election as Atlanta's first Black mayor.",
+          "sources": [
+            1
+          ]
+        },
+        {
+          "year": "1991",
+          "event": "Received the Horatio Alger Award.",
+          "sources": [
+            1
+          ]
+        },
+        {
+          "year": "1994",
+          "event": "Reorganized his construction businesses under H.J. Russell and Company.",
+          "sources": [
+            1
+          ]
+        },
+        {
+          "year": "1999",
+          "event": "Pledged $4 million for entrepreneurship education at four Georgia and Alabama universities.",
+          "sources": [
+            1
+          ]
+        },
+        {
+          "year": "2004",
+          "event": "Stepped down as CEO and remained board chairman.",
+          "sources": [
+            1
+          ]
+        },
+        {
+          "year": "2013",
+          "event": "Named a Georgia Trustee by the Georgia Historical Society and the Governor's Office.",
+          "sources": [
+            1
+          ]
+        },
+        {
+          "year": "2014",
+          "event": "Published his autobiography Building Atlanta and died in Atlanta on November 15.",
+          "sources": [
+            1,
+            2
+          ]
+        },
+        {
+          "year": "2019",
+          "event": "The Russell Innovation Center for Entrepreneurs opened in his former company headquarters.",
+          "sources": [
+            5,
+            6
+          ]
+        },
+        {
+          "year": "2026",
+          "event": "The Georgia Historical Society unveiled a marker at the original headquarters, 504 Fair Street.",
+          "sources": [
+            5
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "title": "Herman J. Russell (1930-2014)",
+          "url": "https://www.georgiaencyclopedia.org/articles/business-economy/herman-j-russell-1930-2014/",
+          "publisher": "New Georgia Encyclopedia"
+        },
+        {
+          "title": "Atlanta icon Herman J. Russell, 83, passed away",
+          "url": "https://atlantablackstar.com/2014/11/17/atlanta-icon-herman-j-russell-83-passed-away/",
+          "publisher": "Atlanta Black Star"
+        },
+        {
+          "title": "South-View Cemetery ensures over a century of Black Atlanta's history isn't forgotten",
+          "url": "https://www.cbsnews.com/atlanta/news/south-view-cemetery-ensures-over-a-century-of-black-atlantas-history-isnt-forgotten/",
+          "publisher": "CBS News Atlanta"
+        },
+        {
+          "title": "South-View Cemetery",
+          "url": "https://en.wikipedia.org/wiki/South-View_Cemetery",
+          "publisher": "Wikipedia"
+        },
+        {
+          "title": "Former H.J. Russell & Company headquarters named Georgia historical site",
+          "url": "https://atlantatribune.com/2026/05/06/former-h-j-russell-company-headquarters-named-georgia-historical-site/",
+          "publisher": "Atlanta Tribune"
+        },
+        {
+          "title": "RCIE nears completion",
+          "url": "https://hypepotamus.com/news/rcie-nears-completion/",
+          "publisher": "Hypepotamus"
+        }
+      ]
+    },
+    {
+      "id": "pf_jesse_hill",
+      "person_id": "person_0140",
+      "full_name": "Jesse Hill",
+      "also_known_as": [
+        "Jesse Hill Jr."
+      ],
+      "birth_year": 1926,
+      "death_year": 2012,
+      "lifespan": "May 30, 1926 – December 17, 2012",
+      "tagline": "Atlanta Life president, Atlanta Inquirer co-founder, and civil rights leader who broke color barriers",
+      "occupations": [
+        "Actuary",
+        "Insurance executive",
+        "Newspaper publisher",
+        "Civil rights leader"
+      ],
+      "burial": "Buried at South-View Cemetery. Reported by Find a Grave (memorial 102285243) and by Wikipedia's South-View list, which cites Henderson's 2018 book South-View: An African American City of the Dead; the Georgia Historical Society marker at the cemetery does not name him.",
+      "sections": [
+        {
+          "heading": "Early life and family",
+          "text": "Jesse Hill Jr. was born in St. Louis, Missouri, to Nancy Dennis Martin and Jesse Hill. Find a Grave and Wikipedia give his birth date as May 30, 1926, which fits his reported age of 86 at his death in December 2012; the New Georgia Encyclopedia gives his birth year as 1927. Hill served in the Korean War from 1952 to 1954. In 1955 he married Azira Gonzalez, and the couple had two daughters, Nancy Mercedes and Azira Dominga. Jesse Hill Jr. died on December 17, 2012, at age 86; Wikipedia gives Atlanta as the place of death. His funeral was held at Big Bethel AME Church, which stands at the corner of Auburn Avenue and the street that had been renamed Jesse Hill Jr. Drive in his honor.",
+          "sources": [
+            1,
+            3,
+            5,
+            2
+          ]
+        },
+        {
+          "heading": "Education",
+          "text": "Jesse Hill Jr. earned a bachelor's degree in mathematics and physics from Lincoln University in Missouri in 1947. He then studied at the University of Michigan, where he received a graduate degree in 1949; the New Georgia Encyclopedia describes it as an MBA, while the Associated Press obituary calls it a master's in actuarial science. That training prepared Hill for a career as one of the few African American actuaries in the country. The University of Michigan later awarded Jesse Hill Jr. an honorary doctor of laws degree in the 1990s.",
+          "sources": [
+            1,
+            2
+          ]
+        },
+        {
+          "heading": "Career and achievements",
+          "text": "Jesse Hill Jr. moved to Atlanta in 1949 to join Atlanta Life Insurance Company as assistant actuary, one of the few African American actuaries in the country. Between 1949 and 1973 he rose to vice president and chief actuary. In 1973 Hill was elected president and CEO of Atlanta Life, the company's third president and the first not related to founder Alonzo Herndon. He retired from Atlanta Life in 1995, according to the New Georgia Encyclopedia, although other sources give different dates. In 1960 he helped create the Atlanta Inquirer, described by the Associated Press as the city's first newspaper for the African American community, and served as its publisher until 1985. Hill served on the boards of eight major corporations, including Knight Ridder, Delta Air Lines, National Service Industries and SunTrust Banks. He was a founding director of MARTA and served on the board for the 1996 Atlanta Olympics, which he helped bring to the city. He became head of the Atlanta Chamber of Commerce in 1977, according to the New Georgia Encyclopedia, as its first African American leader. Hill is also credited with expanding African American access to affordable home mortgages in Georgia, Alabama, Texas and Florida.",
+          "sources": [
+            1,
+            2
+          ]
+        },
+        {
+          "heading": "Civil rights and civic life",
+          "text": "Jesse Hill Jr. was deeply involved in Atlanta's civil rights movement. During the 1950s and 1960s he collected donations from Atlanta Life employees for Martin Luther King Jr.'s efforts, and the King Center described him as having a close relationship with King and helping ensure his legacy would be remembered. In 1960 Hill helped produce \"A Second Look,\" a survey of Atlanta's Black population, with the Atlanta Committee for Cooperative Action. On the NAACP education committee he recruited students to desegregate Georgia colleges, which led to the admission of Hamilton Holmes and Charlayne Hunter to the University of Georgia. In the late 1960s and 1970s he led voter registration drives that added about 50,000 new Black voters in Atlanta, and he ran campaigns for Maynard Jackson, Atlanta's first Black mayor, and Andrew Young. From 1973 to 1984 Hill was the first African American member of the Georgia Board of Regents. He served on the board of the Southern Christian Leadership Conference and chaired the King Center board from 1979 to 1993, according to the Associated Press. In 2003 he co-chaired the committee to rename Hartsfield International Airport for Maynard Jackson.",
+          "sources": [
+            1,
+            2
+          ]
+        },
+        {
+          "heading": "Legacy and honors",
+          "text": "Jesse Hill Jr. was honored in his lifetime when Atlanta renamed Butler Street as Jesse Hill Jr. Drive in 2001. The street runs beside Big Bethel AME Church on Auburn Avenue, where his funeral was held in December 2012. In 2007 he received Atlanta Gas Light Company's Shining Light Award. Hill is credited with expanding African American access to affordable home mortgages in Georgia, Alabama, Texas and Florida, and with breaking color barriers as the first Black member of the Georgia Board of Regents and the first Black head of the Atlanta Chamber of Commerce. His papers are held at the Auburn Avenue Research Library on African American Culture and History in Atlanta, where researchers can study his business and civic career.",
+          "sources": [
+            1,
+            6
+          ]
+        },
+        {
+          "heading": "Did you know?",
+          "text": "Jesse Hill Jr. was the first Atlanta Life president not related to founder Alonzo Herndon, who is buried in the same cemetery. Jesse Hill Jr. Drive, formerly Butler Street and renamed in 2001, runs beside Big Bethel AME Church, where his funeral was held. Hill co-founded the Atlanta Inquirer in 1960 and was its publisher until 1985. He recruited the students who desegregated the University of Georgia, Hamilton Holmes and Charlayne Hunter. He was also the first Black member of the Georgia Board of Regents, serving from 1973 to 1984.",
+          "sources": [
+            1,
+            2
+          ]
+        },
+        {
+          "heading": "Where sources disagree",
+          "text": "Sources disagree on several details of Jesse Hill Jr.'s life. Birth year: the New Georgia Encyclopedia gives 1927, while Find a Grave and Wikipedia give May 30, 1926; his reported age of 86 at his December 2012 death fits 1926. Retirement from Atlanta Life: the New Georgia Encyclopedia says 1995, and the Auburn Avenue Research Library finding aid reportedly agrees; the Associated Press says 1990; Wikipedia says he served as CEO from 1973 to 1992. Atlanta Chamber of Commerce: the New Georgia Encyclopedia says he became chairman in 1977 and calls him the first African American elected president of a major-city chamber, while the Associated Press says he was named head in 1978 as its first Black president. Degrees: the New Georgia Encyclopedia places Lincoln University in St. Louis, while the Associated Press says Jefferson City, Missouri; the encyclopedia calls his 1949 Michigan degree an MBA, while the Associated Press calls it a master's in actuarial science. King Center: the Associated Press gives his board chairmanship as 1979 to 1993, while another AP version published by The Root reportedly ends it in 1995.",
+          "sources": [
+            1,
+            3,
+            5,
+            6,
+            2,
+            7
+          ]
+        }
+      ],
+      "timeline": [
+        {
+          "year": "1926",
+          "event": "Born May 30 in St. Louis, Missouri (the New Georgia Encyclopedia gives 1927).",
+          "sources": [
+            3,
+            5,
+            1
+          ]
+        },
+        {
+          "year": "1947",
+          "event": "Earned a bachelor's degree in mathematics and physics from Lincoln University.",
+          "sources": [
+            1
+          ]
+        },
+        {
+          "year": "1949",
+          "event": "Completed a graduate degree at the University of Michigan and joined Atlanta Life as assistant actuary.",
+          "sources": [
+            1,
+            2
+          ]
+        },
+        {
+          "year": "1952",
+          "event": "Began service in the Korean War, lasting until 1954.",
+          "sources": [
+            1
+          ]
+        },
+        {
+          "year": "1960",
+          "event": "Helped create the Atlanta Inquirer and helped produce the \"A Second Look\" survey of Black Atlanta.",
+          "sources": [
+            2,
+            1
+          ]
+        },
+        {
+          "year": "1973",
+          "event": "Elected president and CEO of Atlanta Life and became the first Black member of the Georgia Board of Regents.",
+          "sources": [
+            1
+          ]
+        },
+        {
+          "year": "1977",
+          "event": "Became head of the Atlanta Chamber of Commerce, its first African American leader (AP gives 1978).",
+          "sources": [
+            1,
+            2
+          ]
+        },
+        {
+          "year": "1979",
+          "event": "Became chairman of the King Center board, serving until 1993 according to the Associated Press.",
+          "sources": [
+            2
+          ]
+        },
+        {
+          "year": "1985",
+          "event": "Ended his tenure as publisher of the Atlanta Inquirer.",
+          "sources": [
+            2
+          ]
+        },
+        {
+          "year": "1995",
+          "event": "Retired from Atlanta Life, according to the New Georgia Encyclopedia (other sources give 1990 or 1992).",
+          "sources": [
+            1
+          ]
+        },
+        {
+          "year": "2001",
+          "event": "Butler Street in Atlanta was renamed Jesse Hill Jr. Drive.",
+          "sources": [
+            1
+          ]
+        },
+        {
+          "year": "2003",
+          "event": "Co-chaired the committee to rename Hartsfield International Airport for Maynard Jackson.",
+          "sources": [
+            1
+          ]
+        },
+        {
+          "year": "2007",
+          "event": "Received Atlanta Gas Light Company's Shining Light Award.",
+          "sources": [
+            1
+          ]
+        },
+        {
+          "year": "2012",
+          "event": "Died December 17 at age 86; funeral held at Big Bethel AME Church.",
+          "sources": [
+            1
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "title": "Jesse Hill (1927-2012)",
+          "url": "https://www.georgiaencyclopedia.org/articles/business-economy/jesse-hill-1927-2012",
+          "publisher": "New Georgia Encyclopedia"
+        },
+        {
+          "title": "Jesse Hill Jr., Atlanta civil rights leader, 86",
+          "url": "https://www.inquirer.com/philly/obituaries/20121220_Jesse_Hill_Jr____Atlanta_civil_rights_leader__86.html",
+          "publisher": "Associated Press via Philadelphia Inquirer"
+        },
+        {
+          "title": "Jesse Hill (memorial 102285243)",
+          "url": "https://www.findagrave.com/memorial/102285243/jesse-hill",
+          "publisher": "Find a Grave"
+        },
+        {
+          "title": "South-View Cemetery",
+          "url": "https://en.wikipedia.org/wiki/South-View_Cemetery",
+          "publisher": "Wikipedia"
+        },
+        {
+          "title": "Jesse Hill",
+          "url": "https://en.wikipedia.org/wiki/Jesse_Hill",
+          "publisher": "Wikipedia"
+        },
+        {
+          "title": "Jesse Hill Jr. papers finding aid",
+          "url": "https://aafa.galileo.usg.edu/repositories/2/resources/292",
+          "publisher": "Auburn Avenue Research Library"
+        },
+        {
+          "title": "Civil Rights Leader Jesse Hill Jr. Dead at 86",
+          "url": "https://www.theroot.com/civil-rights-leader-jesse-hill-jr-dead-at-86-1790894555",
+          "publisher": "The Root"
+        }
+      ]
+    },
+    {
+      "id": "pf_jw_dobbs",
+      "person_id": "person_0082",
+      "full_name": "John Wesley Dobbs",
+      "also_known_as": [
+        "the Grand"
+      ],
+      "birth_year": 1882,
+      "death_year": 1961,
+      "lifespan": "1882 – August 30, 1961",
+      "tagline": "Prince Hall Grand Master and voting rights organizer who gave Atlanta's \"Sweet Auburn\" its name",
+      "occupations": [
+        "Railway Mail Clerk",
+        "Fraternal Leader",
+        "Civic and Political Leader"
+      ],
+      "burial": "Buried at South-View Cemetery, as reported by CBS News Atlanta, which lists him among the civic leaders buried there; a Patch article reportedly also lists his grave site. No official South-View burial record or plot location was found in the research.",
+      "sections": [
+        {
+          "heading": "Early life and family",
+          "text": "John Wesley Dobbs was born in 1882 in Marietta, Georgia, to Minnie and Will Dobbs, who separated when he was about two years old. In 1906 John Wesley Dobbs married Irene Ophelia Thompson. The couple had six daughters, and all six graduated from Spelman College. Their fifth daughter, Mattiwilda Dobbs, became an internationally known opera singer. His grandson Maynard Jackson became Atlanta's first Black mayor. According to the King Papers at Stanford, the family of Martin Luther King Sr. moved to Boulevard near the Dobbs home in 1941, and the children of the two families played together.",
+          "sources": [
+            1,
+            3,
+            4
+          ]
+        },
+        {
+          "heading": "Education",
+          "text": "John Wesley Dobbs began attending school full time in Savannah, Georgia, in 1891. In 1897 he enrolled at Atlanta Baptist College, the school that later became Morehouse College, but he left to care for his ill mother. John Wesley Dobbs never earned a college degree. According to the New Georgia Encyclopedia, he kept studying on his own, educating himself while he built a long career in the postal service and in civic life.",
+          "sources": [
+            1
+          ]
+        },
+        {
+          "heading": "Career and achievements",
+          "text": "John Wesley Dobbs passed the civil service exam in 1903 and became a railway mail clerk for the U.S. Post Office in Atlanta, a job he held for 32 years. By 1949 the New Georgia Encyclopedia describes him as a retired postal employee. Dobbs was initiated into the Prince Hall Masons in 1911 and was elected Grand Master of the Prince Hall Masons of Georgia in 1932. The King Papers give his tenure as Grand Master as 1932 to 1961, the year of his death. His election as Grand Master earned John Wesley Dobbs his lasting nickname, \"the Grand.\" His Masonic leadership gave him a statewide platform that he used for civic and political organizing in Black Atlanta.",
+          "sources": [
+            1,
+            3
+          ]
+        },
+        {
+          "heading": "Civil rights and civic life",
+          "text": "John Wesley Dobbs founded the Atlanta Civic and Political League in 1936 and worked toward registering 10,000 Black voters in Atlanta. He helped win the hiring of eight Black police officers in 1948, though they were limited to patrolling Black neighborhoods, and in 1949 he helped win street lamps for Auburn Avenue. On July 7, 1949, the Atlanta Negro Voters League was founded at the Butler Street YMCA as a bipartisan group; Dobbs, a Republican who led the Fulton County Republican Club, served as one of its first co-chairs alongside A. T. Walden. The league ran voter registration committees, screened candidates, published slates in the Atlanta Daily World, announced them on WERD, offered rides to the polls, and backed Mayor William B. Hartsfield in 1949, 1953 and 1957. In 1953 John Wesley Dobbs split with the league because no Black firemen had been hired, withdrawing his Republican supporters; Rev. William Jackson replaced him in 1954. Dobbs coined the name \"Sweet Auburn\" for the Auburn Avenue district and was called the \"unofficial mayor of Auburn Avenue.\"",
+          "sources": [
+            1,
+            2,
+            4,
+            5
+          ]
+        },
+        {
+          "heading": "Legacy and honors",
+          "text": "John Wesley Dobbs suffered a stroke on August 21, 1961, and died nine days later, on August 30, 1961, at age 79. His funeral was held on September 2, 1961, at Big Bethel AME Church in Atlanta. Martin Luther King Jr. gave the invocation, William Holmes Borders of Wheat Street Baptist Church gave the eulogy, and Thurgood Marshall served as a pallbearer. John Wesley Dobbs was buried at South-View Cemetery. On January 10, 1994, his grandson, Mayor Maynard Jackson, renamed Atlanta's Houston Street as John Wesley Dobbs Avenue in his honor.",
+          "sources": [
+            1,
+            3,
+            4
+          ]
+        },
+        {
+          "heading": "Did you know?",
+          "text": "John Wesley Dobbs is the man who gave Auburn Avenue the name \"Sweet Auburn.\" He was the grandfather of Maynard Jackson, Atlanta's first Black mayor, who in 1994 renamed Houston Street as John Wesley Dobbs Avenue in his honor. Martin Luther King Jr. gave the invocation at his 1961 funeral, and Thurgood Marshall was one of his pallbearers. All six of his daughters graduated from Spelman College, including the opera singer Mattiwilda Dobbs.",
+          "sources": [
+            1,
+            3,
+            4
+          ]
+        },
+        {
+          "heading": "Where sources disagree",
+          "text": "Sources disagree on when John Wesley Dobbs co-founded the Atlanta Negro Voters League with A. T. Walden. The New Georgia Encyclopedia's biography of Dobbs gives 1946, while the New Georgia Encyclopedia's own article on the league gives a founding date of July 7, 1949, at the Butler Street YMCA. The Atlanta History Center reportedly also supports 1949. This profile uses 1949 as the better-supported date. The 1946 date may be a confusion with the 1946 federal ruling that struck down Georgia's white primary, which the league article mentions. Sources also describe his voter registration work differently: the New Georgia Encyclopedia says he worked toward registering 10,000 Black voters in Atlanta, while CBS News Atlanta credits him with registering over 10,000 African Americans in Georgia.",
+          "sources": [
+            1,
+            2,
+            4,
+            6
+          ]
+        }
+      ],
+      "timeline": [
+        {
+          "year": "1882",
+          "event": "Born in Marietta, Georgia, to Minnie and Will Dobbs.",
+          "sources": [
+            1
+          ]
+        },
+        {
+          "year": "1891",
+          "event": "Began attending school full time in Savannah.",
+          "sources": [
+            1
+          ]
+        },
+        {
+          "year": "1897",
+          "event": "Enrolled at Atlanta Baptist College (later Morehouse College) but left to care for his ill mother.",
+          "sources": [
+            1
+          ]
+        },
+        {
+          "year": "1903",
+          "event": "Passed the civil service exam and became a railway mail clerk in Atlanta, a job he held for 32 years.",
+          "sources": [
+            1
+          ]
+        },
+        {
+          "year": "1906",
+          "event": "Married Irene Ophelia Thompson.",
+          "sources": [
+            1
+          ]
+        },
+        {
+          "year": "1911",
+          "event": "Initiated into the Prince Hall Masons.",
+          "sources": [
+            1
+          ]
+        },
+        {
+          "year": "1932",
+          "event": "Elected Grand Master of the Prince Hall Masons of Georgia, serving until 1961.",
+          "sources": [
+            1,
+            3
+          ]
+        },
+        {
+          "year": "1936",
+          "event": "Founded the Atlanta Civic and Political League.",
+          "sources": [
+            1
+          ]
+        },
+        {
+          "year": "1941",
+          "event": "The King family moved to Boulevard near the Dobbs home; the two families' children played together.",
+          "sources": [
+            3
+          ]
+        },
+        {
+          "year": "1948",
+          "event": "Helped win the hiring of eight Black police officers in Atlanta.",
+          "sources": [
+            1
+          ]
+        },
+        {
+          "year": "1949",
+          "event": "Helped win street lamps for Auburn Avenue.",
+          "sources": [
+            1
+          ]
+        },
+        {
+          "year": "1949",
+          "event": "Became a founding co-chair, with A. T. Walden, of the Atlanta Negro Voters League, founded July 7 at the Butler Street YMCA.",
+          "sources": [
+            2
+          ]
+        },
+        {
+          "year": "1953",
+          "event": "Split with the Atlanta Negro Voters League because no Black firemen had been hired.",
+          "sources": [
+            2
+          ]
+        },
+        {
+          "year": "1961",
+          "event": "Died August 30 after a stroke; funeral at Big Bethel AME Church on September 2, with an invocation by Martin Luther King Jr.",
+          "sources": [
+            1,
+            3
+          ]
+        },
+        {
+          "year": "1994",
+          "event": "Mayor Maynard Jackson renamed Houston Street as John Wesley Dobbs Avenue on January 10.",
+          "sources": [
+            1
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "title": "John Wesley Dobbs (1882-1961)",
+          "url": "https://www.georgiaencyclopedia.org/articles/history-archaeology/john-wesley-dobbs-1882-1961/",
+          "publisher": "New Georgia Encyclopedia"
+        },
+        {
+          "title": "Atlanta Negro Voters League (ANVL)",
+          "url": "https://www.georgiaencyclopedia.org/articles/government-politics/atlanta-negro-voters-league-anvl/",
+          "publisher": "New Georgia Encyclopedia"
+        },
+        {
+          "title": "Invocation Delivered at Funeral of John Wesley Dobbs at Big Bethel AME Church",
+          "url": "https://kinginstitute.stanford.edu/king-papers/documents/invocation-delivered-funeral-john-wesley-dobbs-big-bethel-ame-church-0",
+          "publisher": "Martin Luther King, Jr. Research and Education Institute, Stanford University"
+        },
+        {
+          "title": "South-View Cemetery ensures over a century of Black Atlanta's history isn't forgotten",
+          "url": "https://www.cbsnews.com/atlanta/news/south-view-cemetery-ensures-over-a-century-of-black-atlantas-history-isnt-forgotten/",
+          "publisher": "CBS News Atlanta"
+        },
+        {
+          "title": "Obituary: Soprano Mattiwilda Dobbs, 90",
+          "url": "https://symphony.org/obituary-soprano-mattiwilda-dobbs-90/",
+          "publisher": "League of American Orchestras (quoting the Atlanta Journal-Constitution)"
+        },
+        {
+          "title": "Atlanta Negro Voters League: Strength in Unity",
+          "url": "https://www.atlantahistorycenter.com/blog/atlanta-negro-voters-league-strength-in-unity/",
+          "publisher": "Atlanta History Center"
+        }
+      ]
+    },
+    {
+      "id": "pf_mattiwilda_dobbs",
+      "person_id": "person_0084",
+      "full_name": "Mattiwilda Dobbs",
+      "also_known_as": [
+        "Mattiwilda Dobbs Janzon"
+      ],
+      "birth_year": 1925,
+      "death_year": 2015,
+      "lifespan": "July 11, 1925 – December 8, 2015",
+      "tagline": "Atlanta-born soprano, first African American to sing a lead role at La Scala, who refused segregated stages",
+      "occupations": [
+        "Opera Singer",
+        "Coloratura Soprano",
+        "Voice Teacher"
+      ],
+      "burial": "Her South-View burial is weakly sourced: she is listed in the South-View book by Henderson (2018) as buried there, and a Toni Morrison Society page (seen only as a search summary) reportedly lists her among those interred at South-View, but no obituary, funeral notice, plot location or burial date confirming it was found.",
+      "sections": [
+        {
+          "heading": "Early life and family",
+          "text": "Mattiwilda Dobbs was born on July 11, 1925, in Atlanta, the fifth of six daughters of John Wesley Dobbs and Irene Ophelia Thompson. She was named for her maternal grandmother, Mattie Wilda Sykes. Her nephew Maynard Jackson became Atlanta's first Black mayor, and her sister June Dobbs Butts survived her. Mattiwilda Dobbs married Luis Rodriguez, who died of a liver ailment in June 1954, about 14 months after their wedding. Just before Christmas 1957 she married the Swedish newspaperman Bengt Janzon in New York, and she was later known as Mattiwilda Dobbs Janzon. Bengt Janzon died in 1997.",
+          "sources": [
+            1,
+            2
+          ]
+        },
+        {
+          "heading": "Education",
+          "text": "Mattiwilda Dobbs earned a music degree from Spelman College in 1946 and graduated as class valedictorian. She went on to study voice in New York with Lotte Leonard. Mattiwilda Dobbs won a Marian Anderson Award and a John Hay Whitney Fellowship, and the fellowship funded her further study in Europe, which led to her international career. Decades later, in 1979, Spelman College awarded Mattiwilda Dobbs an honorary doctorate.",
+          "sources": [
+            1,
+            2
+          ]
+        },
+        {
+          "heading": "Career and achievements",
+          "text": "Mattiwilda Dobbs, a coloratura soprano, won the International Music Competition in Geneva, Switzerland, in 1951. In 1953 she sang Elvira in Rossini's L'italiana in Algeri at La Scala in Milan, becoming the first African American to sing a lead role there. Her U.S. debut came in New York in 1954. In 1956 she made her Metropolitan Opera debut as Gilda in Verdi's Rigoletto. Mattiwilda Dobbs was the first Black woman offered a long-term contract by the Met, where she sang 29 performances in six roles over eight seasons. In 1974 she began teaching at the University of Texas, the first African American artist on its faculty, and she was Spelman's artist-in-residence in 1974-75. She later became a professor of voice at Howard University. Mattiwilda Dobbs gave recitals until at least 1990 and served on the Metropolitan Opera board and the National Endowment for the Arts Solo Recital Panel.",
+          "sources": [
+            1,
+            2
+          ]
+        },
+        {
+          "heading": "Civil rights and civic life",
+          "text": "Mattiwilda Dobbs refused to perform for segregated audiences, following the example of Paul Robeson. According to a Philadelphia Inquirer obituary (seen as a search summary), this meant she did not sing professionally in her hometown of Atlanta until 1962. That year, after the Atlanta Municipal Auditorium was desegregated, Mattiwilda Dobbs sang there before a large integrated audience. Mayor Ivan Allen Jr. joined her onstage and presented her with a key to the city.",
+          "sources": [
+            1,
+            3
+          ]
+        },
+        {
+          "heading": "Legacy and honors",
+          "text": "Mattiwilda Dobbs is remembered as a pioneer: the first African American to sing a lead role at La Scala, in 1953, and the first Black woman given a long-term contract by the Metropolitan Opera. Her honors included the 1951 Geneva International Music Competition prize, a Marian Anderson Award, a John Hay Whitney Fellowship, a key to the city of Atlanta in 1962, and an honorary doctorate from Spelman College in 1979. Mattiwilda Dobbs died on December 8, 2015, at her home in Atlanta, after what the Atlanta Journal-Constitution called a brief bout with cancer. She was 90.",
+          "sources": [
+            1,
+            2
+          ]
+        },
+        {
+          "heading": "Did you know?",
+          "text": "Mattiwilda Dobbs was the first African American to sing a lead role at La Scala, as Elvira in 1953. She would not sing for segregated audiences, so her 1962 Atlanta homecoming concert was before an integrated audience, and the mayor gave her a key to the city. She was the first Black woman given a long-term Metropolitan Opera contract, debuting as Gilda in 1956. Mattiwilda Dobbs was the daughter of John Wesley Dobbs and the aunt of Mayor Maynard Jackson.",
+          "sources": [
+            1,
+            2
+          ]
+        },
+        {
+          "heading": "Where sources disagree",
+          "text": "Sources differ slightly on two points about Mattiwilda Dobbs. On her place of death, the New Georgia Encyclopedia and the League of American Orchestras obituary say she died at her Atlanta home, while a Philadelphia Inquirer obituary (seen only as a search summary) reportedly says a retirement community in Atlanta. This profile uses her home, the better-supported account. On her 1954 U.S. debut in New York, the New Georgia Encyclopedia describes it as a recital, while the League of American Orchestras says she appeared with the Little Orchestra Society; both place it in New York in 1954.",
+          "sources": [
+            1,
+            2,
+            3
+          ]
+        }
+      ],
+      "timeline": [
+        {
+          "year": "1925",
+          "event": "Born July 11 in Atlanta, the fifth daughter of John Wesley Dobbs and Irene Ophelia Thompson.",
+          "sources": [
+            1
+          ]
+        },
+        {
+          "year": "1946",
+          "event": "Graduated from Spelman College as valedictorian with a music degree.",
+          "sources": [
+            2
+          ]
+        },
+        {
+          "year": "1951",
+          "event": "Won the International Music Competition in Geneva, Switzerland.",
+          "sources": [
+            1
+          ]
+        },
+        {
+          "year": "1953",
+          "event": "Sang Elvira in L'italiana in Algeri at La Scala, the first African American to sing a lead role there.",
+          "sources": [
+            1,
+            2
+          ]
+        },
+        {
+          "year": "1954",
+          "event": "Made her U.S. debut in New York; her first husband, Luis Rodriguez, died in June.",
+          "sources": [
+            1,
+            2
+          ]
+        },
+        {
+          "year": "1956",
+          "event": "Made her Metropolitan Opera debut as Gilda in Verdi's Rigoletto.",
+          "sources": [
+            1,
+            2
+          ]
+        },
+        {
+          "year": "1957",
+          "event": "Married Swedish newspaperman Bengt Janzon in New York.",
+          "sources": [
+            1
+          ]
+        },
+        {
+          "year": "1962",
+          "event": "Sang for an integrated audience at the newly desegregated Atlanta Municipal Auditorium and received a key to the city.",
+          "sources": [
+            1
+          ]
+        },
+        {
+          "year": "1974",
+          "event": "Began teaching at the University of Texas, its first African American artist faculty member; Spelman artist-in-residence 1974-75.",
+          "sources": [
+            1
+          ]
+        },
+        {
+          "year": "1979",
+          "event": "Received an honorary doctorate from Spelman College.",
+          "sources": [
+            1
+          ]
+        },
+        {
+          "year": "1990",
+          "event": "Was still giving recitals as late as this year.",
+          "sources": [
+            1
+          ]
+        },
+        {
+          "year": "1997",
+          "event": "Her husband Bengt Janzon died.",
+          "sources": [
+            1
+          ]
+        },
+        {
+          "year": "2015",
+          "event": "Died December 8 at her home in Atlanta, aged 90.",
+          "sources": [
+            1,
+            2
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "title": "Mattiwilda Dobbs (1925-2015)",
+          "url": "https://www.georgiaencyclopedia.org/articles/arts-culture/mattiwilda-dobbs-1925-2015/",
+          "publisher": "New Georgia Encyclopedia"
+        },
+        {
+          "title": "Obituary: Soprano Mattiwilda Dobbs, 90",
+          "url": "https://symphony.org/obituary-soprano-mattiwilda-dobbs-90/",
+          "publisher": "League of American Orchestras (quoting the Atlanta Journal-Constitution)"
+        },
+        {
+          "title": "Mattiwilda Dobbs, pioneering soprano, 90",
+          "url": "https://inquirer.com/philly/news/20151214_Mattiwilda_Dobbs___Pioneering_soprano__90.html",
+          "publisher": "Philadelphia Inquirer"
+        },
+        {
+          "title": "Twenty-Third Bench by the Road",
+          "url": "https://www.tonimorrisonsociety.org/twenty-third-bench-by-the-road.php",
+          "publisher": "Toni Morrison Society"
+        }
+      ]
     }
   ]
 }
