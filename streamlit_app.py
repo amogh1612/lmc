@@ -6,10 +6,35 @@ import os
 import re
 import time
 
+import importlib
+
 import streamlit as st
 import streamlit.components.v1 as components
 from dotenv import load_dotenv
 from groq import Groq
+
+import directory
+import featured as featured_module
+import rag
+import styles
+
+APP_DIR = os.path.dirname(os.path.abspath(__file__))
+# Changes whenever the code or database changes, so a redeploy never mixes old cached objects with new code.
+CODE_VERSION = "-".join(
+    str(int(os.path.getmtime(os.path.join(APP_DIR, f))))
+    for f in ("rag.py", "directory.py", "featured.py", "styles.py", "southview_rag_database.json")
+)
+
+
+@st.cache_resource(show_spinner=False)
+def _load_current_code(version: str) -> str:
+    """Reload this project's modules once per code version (Streamlit Cloud can keep old ones in memory)."""
+    for module in (rag, directory, featured_module, styles):
+        importlib.reload(module)
+    return version
+
+
+_load_current_code(CODE_VERSION)
 
 from directory import OCCUPATION_GROUPS, OTHER_GROUP, filter_people, load_people, load_prominent
 from featured import monthly_featured
@@ -120,23 +145,23 @@ if not api_key:
 
 
 @st.cache_resource
-def get_client_and_retriever():
+def get_client_and_retriever(version: str):
     return Groq(api_key=api_key), build_retriever()
 
 
 @st.cache_data
-def get_featured(year: int, month: int):
+def get_featured(year: int, month: int, version: str):
     # Cached per month, so the picks refresh automatically when the month changes.
     return monthly_featured(datetime.date(year, month, 1))
 
 
 @st.cache_data
-def get_directory():
+def get_directory(version: str):
     return load_people(), load_prominent()
 
 
-client, retriever = get_client_and_retriever()
-people, prominent = get_directory()
+client, retriever = get_client_and_retriever(CODE_VERSION)
+people, prominent = get_directory(CODE_VERSION)
 prominent_by_id = {f["id"]: f for f in prominent}
 prominent_by_person = {f.get("person_id"): f for f in prominent}
 
@@ -218,7 +243,7 @@ with tab_prom:
 
 with tab_feat:
     today = datetime.date.today()
-    featured = get_featured(today.year, today.month)
+    featured = get_featured(today.year, today.month, CODE_VERSION)
     st.markdown(
         f'<div class="section-sub">Five people from South-View\'s history for {today.strftime("%B %Y")}, '
         "chosen fresh each month.</div>",
